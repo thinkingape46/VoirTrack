@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,10 @@
   "homepage": "https://github.com/thinkingape46/VoirTrack#readme",
   "dependencies": {
     "ol": "^6.4.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

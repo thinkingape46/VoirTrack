@@ -1,12 +1,18 @@
-var map = new ol.Map({
-    target: 'map',
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.OSM()
-      })
-    ],
-    view: new ol.View({
-      center: ol.proj.fromLonLat([77.7184446, 12.9655114]),
-      zoom: 8
-    })
-  });
+import Map from 'ol/Map';
+import View from 'ol/View';
+import OSM from 'ol/source/OSM';
+import TileLayer from 'ol/layer/Tile';
+import {useGeographic} from 'ol/proj';
+
+useGeographic();
+
+new Map({
+  layers: [
+    new TileLayer({source: new OSM()})
+  ],
+  view: new View({
+    center: [77.59, 12.97],
+    zoom: 10
+  }),
+  target: 'map'
+});
