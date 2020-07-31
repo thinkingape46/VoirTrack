@@ -4,7 +4,7 @@ import View from "ol/View";
 
 // Create Map render
 let map = new Map({
-    target: "map-container";
+    target: "map-container"
 })
 
 map.setView(
