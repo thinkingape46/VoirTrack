@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/thinkingape46/VoirTrack#readme",
   "dependencies": {
+    "leaflet": "^1.6.0",
     "ol": "^6.4.1"
   },
   "devDependencies": {
