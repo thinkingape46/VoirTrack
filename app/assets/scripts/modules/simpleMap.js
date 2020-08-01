@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import GPX from 'leaflet-gpx';
 
 // Create a map.
 let simpleMap = L.map('mapid');
@@ -54,5 +55,11 @@ function onMapClick(e) {
 }
 simpleMap.addEventListener("click", onMapClick);
 
+
+// Display GPX
+let gpxFile = "assets/tracks/sample.gpx";
+new L.GPX(gpxFile, {async: true}).on('loaded', function(e) {
+    simpleMap.fitBounds(e.target.getBounds())
+}).addTo(simpleMap);
 
 export default simpleMap;
