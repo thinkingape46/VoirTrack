@@ -94,7 +94,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_simpleMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/simpleMap */ \"./app/assets/scripts/modules/simpleMap.js\");\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_simpleMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/simpleMap */ \"./app/assets/scripts/modules/simpleMap.js\");\n/* harmony import */ var _modules_UploadGPX__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/UploadGPX */ \"./app/assets/scripts/modules/UploadGPX.js\");\n\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/UploadGPX.js":
+/*!*************************************************!*\
+  !*** ./app/assets/scripts/modules/UploadGPX.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nlet gpxFile = document.getElementById(\"gpx-file\");\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (gpxFile);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/UploadGPX.js?");
 
 /***/ }),
 
