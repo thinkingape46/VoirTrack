@@ -57,9 +57,9 @@ simpleMap.addEventListener("click", onMapClick);
 
 
 // Display GPX
-let gpxFile = "assets/tracks/sample.gpx";
-new L.GPX(gpxFile, {async: true}).on('loaded', function(e) {
-    simpleMap.fitBounds(e.target.getBounds())
-}).addTo(simpleMap);
+// let gpxFile = "assets/tracks/sample.gpx";
+// new L.GPX(gpxFile, {async: true}).on('loaded', function(e) {
+//     simpleMap.fitBounds(e.target.getBounds())
+// }).addTo(simpleMap);
 
 export default simpleMap;

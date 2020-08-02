@@ -10,14 +10,13 @@
 <body>
 
     <div>
-        <form id="gpx-file" action="POST">
-            <input type="file">
-            <button type="submit">Plot GPX</button>
+        <form>
+            <input type="file" id="gpx-file" multiple>
+            <button id="submit" type="submit">Plot GPX</button>
         </form>
     </div>
 
     <div id="mapid"></div>    
     <script src="bundled.js"></script>
-    <script src="assets/scripts/App.js"></script>
 </body>
 </html>
