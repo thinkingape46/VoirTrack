@@ -1,2 +1,1 @@
-import simpleMap from './modules/simpleMap';
-import gpxFunc from './modules/UploadGPX';
+import gpxFunc from './modules/gpxPlot';
