@@ -94,7 +94,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_gpxPlot__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/gpxPlot */ \"./app/assets/scripts/modules/gpxPlot.js\");\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_gpxPlot__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/gpxPlot */ \"./app/assets/scripts/modules/gpxPlot.js\");\n/* harmony import */ var _modules_dragDropFile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/dragDropFile */ \"./app/assets/scripts/modules/dragDropFile.js\");\n\r\n\r\n\r\nlet dragDropFile = new _modules_dragDropFile__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/dragDropFile.js":
+/*!****************************************************!*\
+  !*** ./app/assets/scripts/modules/dragDropFile.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _simpleMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./simpleMap */ \"./app/assets/scripts/modules/simpleMap.js\");\n\r\n\r\nclass DragDropFile {\r\n\r\n    constructor() {\r\n        this.dragDropArea = document.getElementById(\"drag-drop\");\r\n        this.events();\r\n    }\r\n\r\n    events() {\r\n        this.dragDropArea.addEventListener(\"drop\", (e) => this.renderGpxfile(e));\r\n        this.dragDropArea.addEventListener(\"dragover\", (e) => this.dragHandlerFunc(e));\r\n    }\r\n\r\n    renderGpxfile(e) {\r\n        e.preventDefault();\r\n        let files = e.dataTransfer.files;\r\n        let i;\r\n\r\n        for (i=0; i<files.length; i++) {\r\n\r\n            let filePath = URL.createObjectURL(files[i]);\r\n            new L.GPX(filePath, {async: true}).on('loaded', function(e) {\r\n                _simpleMap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].fitBounds(e.target.getBounds())\r\n            }).addTo(_simpleMap__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\r\n        }\r\n    }\r\n\r\n    dragHandlerFunc(e) {\r\n        e.preventDefault();\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (DragDropFile);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/dragDropFile.js?");
 
 /***/ }),
 
