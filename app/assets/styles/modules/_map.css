@@ -1,0 +1,12 @@
+#mapid {
+    margin-left: auto;
+    margin-right: auto;
+    height: 428px;
+    width: 800px;
+    background-color: lightblue;
+}
+
+.map-container {
+    flex-basis: 51.7%;
+    border: 2px solid $darkGrey;
+}

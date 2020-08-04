@@ -1,0 +1,12 @@
+.site-nav {
+    flex: 8;
+
+    &__item {
+        list-style: none;
+        color: #fff;
+        font-size: 2rem;
+        text-align: right;
+        font-weight: 100;
+    }
+
+}
