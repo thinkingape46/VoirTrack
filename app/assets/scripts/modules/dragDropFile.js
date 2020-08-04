@@ -6,12 +6,10 @@ class DragDropFile {
         this.dragDropArea = document.getElementById("drag-drop");
         this.events();
     }
-
     events() {
         this.dragDropArea.addEventListener("drop", (e) => this.renderGpxfile(e));
         this.dragDropArea.addEventListener("dragover", (e) => this.dragHandlerFunc(e));
     }
-
     renderGpxfile(e) {
         e.preventDefault();
         let files = e.dataTransfer.files;
@@ -25,7 +23,6 @@ class DragDropFile {
             }).addTo(simpleMap);
         }
     }
-
     dragHandlerFunc(e) {
         e.preventDefault();
     }

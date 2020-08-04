@@ -1,21 +1,6 @@
-body {
-    height: 677px;
-    width: 1566px;
-}
+@import 'base/_base';
+@import 'modules/map';
+@import 'modules/drag_drop';
 
-#mapid {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    height: 500px;
-    width: 700px;
-    background-color: lightblue;
-}
 
-#drag-drop {
-    margin-left: auto;
-    margin-right: auto;
-    width: 20.88%;
-    height: 14.77%;
-    background-color: #70f8ff;
-}
+
