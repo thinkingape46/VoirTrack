@@ -9,9 +9,11 @@ class DragDropFile {
     events() {
         this.dragDropArea.addEventListener("drop", (e) => this.renderGpxfile(e));
         this.dragDropArea.addEventListener("dragover", (e) => this.dragHandlerFunc(e));
+        this.dragDropArea.addEventListener("dr")
     }
     renderGpxfile(e) {
-        e.preventDefault();
+        e.preventDefault();        
+        this.dragDropArea.classList.remove("drop-area__drag-over");
         let files = e.dataTransfer.files;
         let i;
 
@@ -25,6 +27,7 @@ class DragDropFile {
     }
     dragHandlerFunc(e) {
         e.preventDefault();
+        this.dragDropArea.classList.add("drop-area__drag-over");
     }
 }
 

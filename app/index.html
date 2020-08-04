@@ -4,25 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Map</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
 </head>
 <body>
 
     <div class="header">
-
+        <div class="header__logo">
+            <img class="header__logo__img" src="./assets/images/site-logo.svg" alt="website logo showing a silhouette of woman on a bicycle">
+        </div>
+        <div class="site-nav">
+            <ul>
+                <li class="site-nav__item">About</li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <form>
-            <input type="file" id="gpx-file" multiple>
-            <button id="submit" type="submit">Plot GPX</button>
-        </form>
-    </div>    
+
+    <div class="main-container">
+
+        <div class="input-container">
+
+            <div class="drop-area" id="drag-drop" draggable="true">
+                <p class="drop-area__text-content">Drop files here</p>
+            </div>
+
+            <div class="form-container">
+                <form>
+                    <input type="file" id="gpx-file" multiple>
+                    <button id="submit" type="submit">Plot GPX</button>
+                </form>
+            </div>
+
+        </div>
     
-    <div id="drag-drop" draggable="true">
-        <p>Drop files here</p>
-    </div>
+        <div class="map-container" id="mapid">
 
-    <div id="mapid"></div>
+        </div>
+
+        <div class="stats-container">
+
+        </div>
+
+
+    </div>
 
     <script src="bundled.js"></script>
 </body>

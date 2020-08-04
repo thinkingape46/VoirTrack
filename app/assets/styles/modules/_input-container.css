@@ -1,0 +1,5 @@
+.input-container {
+    flex-basis: 22.5%;
+    justify-content: space-between;
+    background-color: $darkGrey;
+}

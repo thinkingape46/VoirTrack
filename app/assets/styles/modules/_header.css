@@ -1,0 +1,17 @@
+.header {    
+    margin-top: 10px;
+    width: 1070px;
+    height: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    background-color: $darkGrey;
+
+    &__logo {
+        flex: 2;
+        &__img {
+            height: 84px;
+        }
+
+    }
+}
