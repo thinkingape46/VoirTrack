@@ -9,7 +9,6 @@ class DragDropFile {
     events() {
         this.dragDropArea.addEventListener("drop", (e) => this.renderGpxfile(e));
         this.dragDropArea.addEventListener("dragover", (e) => this.dragHandlerFunc(e));
-        this.dragDropArea.addEventListener("dr")
     }
     renderGpxfile(e) {
         e.preventDefault();        
