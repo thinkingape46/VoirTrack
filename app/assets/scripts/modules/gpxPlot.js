@@ -1,21 +1,29 @@
 import GPX from 'leaflet-gpx';
 import simpleMap from './simpleMap';
 
-const gpxFormInput = document.getElementById("gpx-file");
-let gpxFormSubmit = document.getElementById("submit");
-gpxFormSubmit.addEventListener("click", gpxFunc);
-const reader = new FileReader();
-
-function gpxFunc(e) {
+class GpxPlotter {
+    constructor() {
+        this.addFiles = document.getElementById('add-files');
+        this.gpxFormInput = document.getElementById('gpx-file');        
+        this.gpxFormSubmit = document.getElementById('submit');
+        this.events();
+    }
+    events() {
+        this.addFiles.addEventListener('click', (e) => this.addFilesMethod(e));
+        this.gpxFormSubmit.addEventListener('click', (e) => this.gpxFunc(e));
+    }
+    addFilesMethod(e) {
+        this.gpxFormInput.click();
+    }
+    gpxFunc(e) {
         e.preventDefault();
+        let files = this.gpxFormInput.files;
 
-        if (gpxFormInput.files.length > 0) {
-            let gpxFiles = gpxFormInput.files;
-            let file = gpxFormInput.files[0];
+        if (files.length > 0) {
 
             let i;
-            for (i=0; i<gpxFiles.length; i++) {
-                let filepath = URL.createObjectURL(gpxFiles[i]);
+            for (i=0; i<files.length; i++) {
+                let filepath = URL.createObjectURL(files[i]);
                 new L.GPX(filepath, {async: true}).on('loaded', function(e) {
                     simpleMap.fitBounds(e.target.getBounds())
                 }).addTo(simpleMap);
@@ -23,4 +31,7 @@ function gpxFunc(e) {
                 
         else {
             console.log("No files loaded!")
-        }}
+        }
+    }
+}
+export default GpxPlotter;
