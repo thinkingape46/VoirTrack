@@ -1,5 +1,5 @@
 import '../styles/styles.css'
-import changeColor from './modules/logo';
+// import changeColor from './modules/logo';
 import gpxFunc from './modules/gpxPlot';
 import GpxPlotter from './modules/gpxPlot';
 import DragDropFile from './modules/dragDropFile';
