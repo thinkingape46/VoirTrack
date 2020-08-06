@@ -1,0 +1,12 @@
+.header__title {
+    display: flex;
+
+    &__text {
+        font-size: 2em;
+        margin: auto;
+        margin-left: 0;
+        color: #000;
+        font-weight: 400;
+    }
+
+}

@@ -1,0 +1,15 @@
+.header__logo {
+    display: flex;
+    
+    &__img {
+        margin: 0;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+#path851, #path885 {
+    fill: rgb(1, 73, 139);
+    stroke: none;
+    transition: all 1s ease-out;
+}

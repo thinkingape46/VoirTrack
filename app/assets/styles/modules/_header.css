@@ -1,15 +1,8 @@
 .header {    
-    margin-top: 10px;
-    width: 90%;
+    margin-top: 30px;
+    width: 50%;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-
-    &__logo {
-        flex: 2;
-        &__img {
-            height: 100px;
-        }
-    }
 }

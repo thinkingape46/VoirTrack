@@ -1,5 +1,5 @@
 .stats-container {
-    flex-basis: 23%;
-    background-color: $darkGrey;
-    justify-content: space-between;
+    flex-basis: 24%;
+    background-color: $darkGreyTransparent;
+    height: 600px;
 }

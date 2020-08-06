@@ -1,12 +1,30 @@
-.site-nav {
-    flex: 8;
+.header__nav {
+    display: flex;
+    margin-left: auto;
 
-    &__item {
+    &__ul {
         list-style: none;
-        color: #fff;
-        font-size: 2rem;
-        text-align: right;
-        font-weight: 100;
+        background-color: $darkGrey;
+        margin: auto;
+        height: 50%;
+        width: 100px;
+        margin-left: 10px;
+        border-radius: 5px;
+        padding: 0;
+        display: flex;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: $mainGrey;
+        }
     }
 
+    &__item {
+        margin: auto;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        
+    }
 }
