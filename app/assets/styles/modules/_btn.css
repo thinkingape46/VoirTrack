@@ -21,6 +21,10 @@
         }
     }
 
+    &--orange {
+        background-color: orange;
+    }
+
     &--red-gradient {
         background-color: $mainRed;
         
