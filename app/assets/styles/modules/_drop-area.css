@@ -1,8 +1,5 @@
-.drop-area {    
-    position: relative;
+.drop-area {
     display: block;
-    margin: 10px auto 0 auto;
-    width: 93%;
     height: 23.3%;
     background: radial-gradient($lightGrey, #fff);
     border: 2px dashed $darkGrey;
