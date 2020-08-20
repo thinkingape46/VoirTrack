@@ -8,17 +8,14 @@
         animation: trip 5s ease-out infinite;
     }
 }
-
 .for-animation {
     animation: rough 0.1s ease-in-out infinite
 }
-
 @keyframes rough {
     0% {transform: translateY(0px)}
     50% {transform: translateY(3px)}
     100% {transform: translateY(0px)}
 }
-
 @keyframes trip {
     0% {transform: translateX(0px) rotateY(0deg);}
     20% {transform: translateX(-70px) rotateY(0deg);}
@@ -27,9 +24,6 @@
     90% {transform: translateX(00px) rotateY(180deg);}
     100% {transform: translateX(0px) rotateY(0deg);}
 }
-
-
-
 #path851, #path885 {
     fill: rgb(177, 0, 0);
     stroke: none;
