@@ -2,9 +2,9 @@
   "name": "voirtrack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "watch": "start nodemon server --ignore frontend-js --ignore public/ --ignore app/  && start webpack --watch",
+    "watch": "start nodemon server --ignore frontend-js --ignore public/ --ignore app/  && start npm run dev",
     "dev": "webpack-dev-server",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"

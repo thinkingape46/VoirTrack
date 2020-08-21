@@ -71,4 +71,6 @@ if (currentTask == 'build') {
         new RunAftercompile());
 }
 
+console.log(currentTask);
+
 module.exports = config;
