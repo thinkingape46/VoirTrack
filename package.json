@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon app",
+    "watch": "start nodemon app --ignore frontend-js --ignore public/ --ignore app/  && start webpack --watch",
     "dev": "webpack-dev-server",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -32,7 +32,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.0",
+    "fs-extra": "^9.0.1",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.10.0",
     "parcel-bundler": "^1.12.4",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
