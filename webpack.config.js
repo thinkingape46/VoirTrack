@@ -27,7 +27,7 @@ let cssConfig = {
 }
 
 let config = {
-    entry: "./app/assets/scripts/App.js",
+    entry: './app/assets/scripts/App.js',
     plugins: [],
     module: {
         rules: [
