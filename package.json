@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "start nodemon app --ignore frontend-js --ignore public/ --ignore app/  && start webpack --watch",
+    "watch": "start nodemon server --ignore frontend-js --ignore public/ --ignore app/  && start webpack --watch",
     "dev": "webpack-dev-server",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
