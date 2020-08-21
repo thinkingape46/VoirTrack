@@ -28,7 +28,10 @@
     "leaflet-gpx": "^1.5.0",
     "nodemon": "^2.0.4",
     "normalize.css": "^8.0.1",
-    "ol": "^6.4.1"
+    "ol": "^6.4.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
