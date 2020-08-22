@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "watch": "start nodemon server --ignore frontend-js --ignore public/ --ignore app/  && start webpack --watch",
+    "watch": "start nodemon server --ignore public/ --ignore app/  && start webpack --watch",
     "dev": "webpack-dev-server",
     "build": "webpack",
     "start": "node server.js",
@@ -25,6 +25,9 @@
   },
   "homepage": "https://github.com/thinkingape46/VoirTrack#readme",
   "dependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "file-url": "^3.0.0",

@@ -21,6 +21,7 @@ class RunAftercompile {
     }
 }
 
+// Previous code start
 let cssConfig = {
     test: /\.css$/i,
     use: ['css-loader?url=false', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
@@ -70,5 +71,40 @@ if (currentTask == 'build') {
         new MiniCSSExtractPlugin({filename: 'styles.css'}), 
         new RunAftercompile());
 }
+// Previous code end
 
-module.exports = config;
+module.exports = {
+    entry: './app/assets/scripts/App.js',
+    output: {
+      filename: 'main-bundled.js',
+      path: path.resolve(__dirname, 'public')
+    },
+    mode: "production",
+    optimization: {
+        splitChunks: {chunks: 'all'}
+    },
+    plugins: [
+        new CleanWebpackPlugin(), 
+        new MiniCSSExtractPlugin({filename: 'styles.css'}), 
+        new RunAftercompile()],
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        },
+        {
+            test: /\.css$/i,
+            use: [MiniCSSExtractPlugin.loader, 'css-loader?url=false', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
+        }
+      ]
+    }
+  }
+
+// module.exports = config;

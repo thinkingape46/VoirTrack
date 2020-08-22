@@ -227,8 +227,8 @@
             <p class="text-content header__title__text">Trip Visualizer</p>
         </div>
         <div class="header__nav">
-            <ul class="header__nav__ul"><li class="header__nav__item">Demo</li></ul>
-            <ul class="header__nav__ul"><li class="header__nav__item">Read Me</li></ul>
+            <ul class="header__nav__ul"><li class="header__nav__item">Test</li></ul>
+            <ul class="header__nav__ul"><li class="header__nav__item">About</li></ul>
             <ul class="header__nav__ul"><li class="header__nav__item">Contact</li></ul>
         </div>
     </div>
@@ -260,8 +260,26 @@
         </div>
         <div class="stats-container"></div>
     </div>
-    
-    <script src="/vendors~main.js"></script>
-    <script src="/main.js"></script>
+
+    <div class="about" id="modal-window">
+        <div class="about__container">
+            <div id="close-button">
+                <img class="close-button" src="/assets/images/close_button.svg" alt="button to close the modal window">
+            </div>
+            <h1 class="text-content about__title">What is this Trip Visualizer for?</h1>
+            <main class="about__text">
+                <ul class="text-content about__text--item">
+                    <li>Trip Visualizer is a simple web-app to visualize your GPX files on a map.</li>
+                    <li>You can either drop your files over the <strong>Drop files here</strong> area or click on <strong>Add files</strong> to select from your file manager.</li>
+                    <li>Please note that only GPX files are supported.</li>
+                    <li>You can add select or drop multiple files at one or keep adding the files progressively.</li>
+                    <li>This app will not store any of your files.</li>
+                </ul>
+            </main>
+        </div>        
+    </div>
+
+    <script src="/main-bundled.js"></script>
+    <script src="/1.main-bundled.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@ if (port == null || port == "") {
     port = 3000;
 };
 
+app.use(express.static('dist'));
 app.use(express.static('public'));
 app.set('views', 'views');
 app.set('view engine', 'ejs');
