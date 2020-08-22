@@ -18,14 +18,21 @@ body {
     font-weight: 300;
     margin: 0;
 }
-.header {    
+.header {
+    display: flex;
     margin-top: 30px;
-    width: 50%;
-    height: 100px;
+    max-width: 70%;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
+    color: #000;
 }
+.header__main {
+        flex-basis: 24%;
+        display: flex;
+    }
+.header__nav {
+        flex-basis: 76%;
+    }
 .header__title {
         display: flex;
     }
@@ -33,8 +40,8 @@ body {
             font-size: 2em;
             margin: auto;
             margin-left: 0;
-            color: #fff;
-            font-weight: 400;
+            font-weight: 300;
+            color: #000;
         }
 .header__logo {
     display: flex;
@@ -83,31 +90,25 @@ body {
 }
 .header__nav {
     display: flex;
-    margin-left: auto;
 }
-.header__nav__ul {
-        list-style: none;
-        background-color: #363636;
-        margin: auto;
-        height: 50%;
-        width: 100px;
-        margin-left: 10px;
-        border-radius: 5px;
-        padding: 0;
-        display: flex;
-        cursor: pointer;
+.header__nav__ul {      
+        margin: auto 0 auto auto;
+        font-weight: 300;
+        font-size: 1.2rem;
         transition: all 0.3s;
+        display: flex;
     }
-.header__nav__ul:hover {
-            background-color: #5c5c5c;
-        }
 .header__nav__item {
-        margin: auto;
-        padding: 0;
-        width: 100%;
-        text-align: center;
-        
+        margin-left: 20px;
+        list-style: none;
+        display: flex;
     }
+.header__nav__item a {
+            text-decoration: none;
+        }
+.header__nav__item a:active, .header__nav__item a:visited {
+                color: inherit;
+            }
 .input-container {
     flex-basis: 24%;
     background-color: rgba(54, 54, 54, 0.5);
@@ -220,7 +221,7 @@ body {
 }
 .about {
     position: fixed;
-    visibility: visible;
+    visibility: hidden;
     opacity: 100%;
     top: 0;
     left: 0;

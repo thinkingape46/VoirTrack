@@ -1,6 +1,6 @@
 .about {
     position: fixed;
-    visibility: visible;
+    visibility: hidden;
     opacity: 100%;
     top: 0;
     left: 0;

@@ -1,10 +1,19 @@
-.header {    
+.header {
+    display: flex;
     margin-top: 30px;
-    width: 50%;
-    height: 100px;
+    max-width: 70%;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
+    color: #000;
+
+    &__main {
+        flex-basis: 24%;
+        display: flex;
+    }
+
+    &__nav {
+        flex-basis: 76%;
+    }
 
     &__title {
         display: flex;
@@ -13,8 +22,8 @@
             font-size: 2em;
             margin: auto;
             margin-left: 0;
-            color: #fff;
-            font-weight: 400;
+            font-weight: 300;
+            color: #000;
         }
     }
 }
