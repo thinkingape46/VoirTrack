@@ -7,34 +7,34 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="200.02699mm"
-   height="200.02699mm"
-   viewBox="0 0 200.02699 200.02699"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="close_button.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="close_button.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 200.02699 200.02699"
+   height="200.02699mm"
+   width="200.02699mm">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="460.01769"
-     inkscape:cy="395.24551"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1027"
-     inkscape:window-x="-8"
+     inkscape:window-maximized="1"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-x="-8"
+     inkscape:window-height="1027"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="395.24551"
+     inkscape:cx="460.01769"
+     inkscape:zoom="0.98994949"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -48,37 +48,24 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <path
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path833"
-       sodipodi:type="arc"
-       sodipodi:cx="32.263599"
-       sodipodi:cy="138.09444"
-       sodipodi:rx="100"
-       sodipodi:ry="100"
-       sodipodi:start="0"
-       sodipodi:end="6.2826792"
-       sodipodi:arc-type="slice"
-       d="m 132.2636,138.09444 a 100,100 0 0 1 -99.987348,100 A 100,100 0 0 1 -67.736397,138.11974 100,100 0 0 1 32.225641,38.094444 100,100 0 0 1 132.26359,138.04383 l -99.999991,0.0506 z"
-       transform="rotate(-31.871201)" />
+     inkscape:label="Layer 1">
     <rect
-       style="fill:#616161;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect835"
-       width="180"
-       height="20"
-       x="-89.939156"
+       transform="rotate(135.07724)"
        y="-152.49956"
-       transform="rotate(135.07724)" />
-    <rect
-       y="-10.80931"
-       x="-232.18669"
+       x="-89.939156"
        height="20"
        width="180"
+       id="rect835"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       transform="rotate(-135.02455)"
+       style="fill:#fffdfd;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect835-6"
-       style="fill:#616161;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       transform="rotate(-135.02455)" />
+       width="180"
+       height="20"
+       x="-232.18669"
+       y="-10.80931" />
   </g>
 </svg>
