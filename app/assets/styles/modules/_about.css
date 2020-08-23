@@ -1,19 +1,21 @@
 .about {
     position: fixed;
     visibility: hidden;
-    opacity: 100%;
+    opacity: 0;
+    transform: scale(2);
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     background-color: rgba(255, 255, 255, 0.8);
-    z-index: 1000;
+    z-index: 1000;    
+    transition: all 0.5s ease-out;
 
-    &__is-visible {
-        opacity: 0%;
-        transform: scale(2);
-        visibility: hidden;
-        transition: all 0.5s ease-out;
+    &--is-visible {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+        transition: all 0.3s ease-out;
     }
 
     &__container {
@@ -29,12 +31,13 @@
 
     &__title {
         text-align: center;
-        margin-top: 40px;
+        margin-top: 50px;
     }
     &__text {
         padding: 20px;
         margin: 10px 30px auto 30px;
         font-size: 1.2rem;
+        font-weight: 200;
 
         &--item li {
             padding-bottom: 5px;
@@ -42,15 +45,15 @@
     }
 }
 
-.close-button {    
+.close-button-image {    
         position: absolute;
-        height: 45px;
+        height: 35px;
         right: 5px;
         top: 5px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
             transform: rotate(180deg);
-            transition: all 0.3s ease-in-out;
         }
 }
