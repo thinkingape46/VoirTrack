@@ -10,12 +10,23 @@
     }
 
     &__item {
-        margin-left: 20px;
+        margin-left: 7px;
         list-style: none;
         display: flex;
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: skewX(-15deg);
 
-        & a {
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        &__anchor {
             text-decoration: none;
+            padding: 10px 0;
+            width: 100px;
+            text-align: center;
+            display: block;
+            transform: skewX(15deg);
 
             &:active, &:visited {
                 color: inherit;
