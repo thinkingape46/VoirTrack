@@ -2,7 +2,6 @@
     flex-basis: 50%;
     height: 426px;
     border: 2px solid $darkGrey;
-    display: none;
 }
 
 .map-id {
