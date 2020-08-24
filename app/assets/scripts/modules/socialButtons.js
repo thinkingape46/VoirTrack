@@ -16,11 +16,11 @@ class SocialButtons {
         let delay = 0;
 
         socialIconsArray.map(function(el) {
-            delay = delay + 200;
 
             setTimeout(function() {
                 el.classList.toggle("header__nav__social--is-visible");
-            }, delay)
+            }, delay);
+            delay = delay + 300;
         })        
     }
 }

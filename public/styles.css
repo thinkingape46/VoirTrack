@@ -120,7 +120,7 @@ body {
         opacity: 0;
         width: 0px;
         z-index: -99;
-        transition: all 0.2s ease-out;
+        transition: all 0.5s ease-in-out;
     }
 .header__nav__social--is-visible {
             opacity: 1;
@@ -144,10 +144,11 @@ body {
     }
 .drop-area {
     display: block;
-    height: 23.3%;
-    background: radial-gradient(#c2c2c2, #fff);
+    height: 23.3%;    
+    background-color: #fff;
     border: 2px dashed #363636;
-    cursor: pointer; 
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
 }
 .drop-area__drag-over {
         background-color: #c2c2c2;
@@ -155,9 +156,9 @@ body {
 .drop-area__text-content {
         position: absolute;
         width: 100%;
+        color: #000;
         font-size: 1.5rem;
         margin: 0 auto;
-        color: #000;
         font-weight: 300;
         top: 50%;
         transform: translateY(-50%);
@@ -232,6 +233,7 @@ body {
     flex-basis: 50%;
     height: 426px;
     border: 2px solid #363636;
+    display: none;
 }
 .map-id {
     background-color: lightblue;

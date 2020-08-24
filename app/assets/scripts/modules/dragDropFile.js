@@ -8,7 +8,8 @@ class DragDropFile {
     }
     events() {
         this.dragDropArea.addEventListener("drop", (e) => this.renderGpxfile(e));
-        this.dragDropArea.addEventListener("dragover", (e) => this.dragHandlerFunc(e));
+        this.dragDropArea.addEventListener("dragenter", (e) => this.dragHandlerFunc(e));
+        this.dragDropArea.addEventListener("dragleave", (e) => this.dragHandlerFunc(e))
     }
     renderGpxfile(e) {
         e.preventDefault();        
@@ -26,7 +27,7 @@ class DragDropFile {
     }
     dragHandlerFunc(e) {
         e.preventDefault();
-        this.dragDropArea.classList.add("drop-area__drag-over");
+        this.dragDropArea.classList.toggle("drop-area__drag-over");
     }
 }
 
