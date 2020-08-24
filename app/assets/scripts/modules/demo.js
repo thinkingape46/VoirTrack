@@ -1,3 +1,5 @@
+import simpleMap from './simpleMap';
+
 class Demo {
     
     constructor() {
@@ -6,7 +8,17 @@ class Demo {
     }
 
     events() {
-        this.demoButton.addEventListener("click", () => alert("You clicked on demo"));
+        this.demoButton.addEventListener("click", (e) => this.renderGPX(e));
+    }
+
+    renderGPX(e) {
+        e.preventDefault();
+        let filePath = '/assets/tracks/run-sample.gpx';
+        
+
+        new L.GPX(filePath, {async: true}).on('loaded', function(e) {
+            simpleMap.fitBounds(e.target.getBounds())
+        }).addTo(simpleMap);
     }
 }
 

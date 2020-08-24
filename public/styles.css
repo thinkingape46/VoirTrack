@@ -233,7 +233,6 @@ body {
     flex-basis: 50%;
     height: 426px;
     border: 2px solid #363636;
-    display: none;
 }
 .map-id {
     background-color: lightblue;
