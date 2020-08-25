@@ -18,19 +18,23 @@ class AboutModal {
         document.body.insertAdjacentHTML("beforeend", `
             <div class="about" id="modal-window">
             <div class="about__container">
-                <div id="close-button">
-                    <img class="close-button-image" src="/assets/images/close_button.svg" alt="button to close the modal window">
+                <div>
+                    <img id="close-button" class="close-button-image" src="/assets/images/close_button.svg" alt="button to close the modal window">
                 </div>
-                <h1 class="text-content about__title">What is this Trip Visualizer for?</h1>
-                <main class="about__text">
-                    <ul class="text-content about__text--item">
-                        <li>Trip Visualizer is a simple web-app to visualize your GPX files on a map.</li>
-                        <li>You can either drop your files over the <strong>Drop files here</strong> area or click on <strong>Add files</strong> to select from your file manager.</li>
-                        <li>Please note that only GPX files are supported.</li>
-                        <li>You can add select or drop multiple files at one or keep adding the files progressively.</li>
-                        <li>This app will not store any of your files.</li>
-                    </ul>
-                </main>
+
+                <div class="about__container__content">
+                    <h1 class="text-content about__container__content__title">What is this Trip Visualizer for?</h1>
+                    <main class="about__container__content__text">
+                        <ul class="text-content about__container__content__text--item">
+                            <li>Trip Visualizer is a simple web-app to visualize your GPX files on a map.</li>
+                            <li>You can either drop your files over the <strong>Drop files here</strong> area or click on <strong>Add files</strong> to select from your file manager.</li>
+                            <li>Please note that only GPX files are supported.</li>
+                            <li>You can add select or drop multiple files at one or keep adding the files progressively.</li>
+                            <li>This app will not store any of your files.</li>
+                        </ul>
+                    </main>
+                </div>
+                
             </div>        
         </div>
         `);

@@ -241,6 +241,7 @@ body {
     background-color: lightblue;
     width: 100%;
     height: 100%;
+    display: none;
 }
 .connect-strava {
     display:none;
@@ -265,28 +266,35 @@ body {
         transition: all 0.5s ease-out;
     }
 .about__container {
+        position: relative;
         width: 55%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        margin: auto;
+        transform: translateY(25%);
         z-index: 1000;
-        height: 75%;
+        height: 500px;
         background: linear-gradient(#5c5c5c, #363636);
     }
-.about__title {
-        text-align: center;
-        margin-top: 50px;
-    }
-.about__text {
-        padding: 20px;
-        margin: 10px 30px auto 30px;
-        font-size: 1.2rem;
-        font-weight: 200;
-    }
-.about__text--item li {
-            padding-bottom: 5px;
+.about__container__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
         }
+.about__container__content__title {
+                position: relative;
+                text-align: center;
+                margin-top: 50px;
+            }
+.about__container__content__text {
+                position: relative;
+                padding: 10px;
+                margin: 10px 30px auto 30px;
+                font-weight: 200;
+            }
+.about__container__content__text--item li {
+                    padding-bottom: 5px;
+                }
 .close-button-image {    
         position: absolute;
         height: 35px;
@@ -294,6 +302,7 @@ body {
         top: 5px;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        z-index: 1100;
 }
 .close-button-image:hover {
             transform: rotate(180deg);
