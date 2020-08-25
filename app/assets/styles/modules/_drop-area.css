@@ -7,7 +7,13 @@
     transition: all 0.3s ease-in-out;
     
     &__drag-over {
-        background-color: rgb(196, 255, 194);
+        z-index: 2001;
+        background-color: $mainGrey;
+        border-radius: 5px;
+
+        .drop-area__text-content {
+            color: #fff;
+        }
     }
 
     &__text-content {
@@ -21,4 +27,22 @@
         transform: translateY(-50%);
         text-align: center;
     } 
+}
+
+.paint-white {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 2000;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &--is-visible {
+        visibility: visible;
+        opacity: 100%;
+    }
 }
