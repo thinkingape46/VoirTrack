@@ -16,7 +16,8 @@ const postCSSPlugins = [
 class RunAftercompile {
     apply(compiler) {
         compiler.hooks.done.tap('Copy images', function() {
-            fse.copySync('./app/assets/images', './public/assets/images')
+            fse.copySync('./app/assets/images', './public/assets/images');
+            fse.copySync('./app/assets/tracks', './public/assets/tracks');
         })
     }
 }
