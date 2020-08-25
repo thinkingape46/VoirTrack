@@ -1,0 +1,23 @@
+.gpx-file-input {
+    display: none;
+}
+
+.select-files {
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+
+    &__text-content {
+        width: 50%;
+        font-size: 1.5rem;
+    }
+}
+
+.submit-files {
+    position: absolute;
+    width: 35%;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3%;
+}

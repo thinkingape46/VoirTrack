@@ -6,14 +6,15 @@ class DragDropFile {
         this.dragDropArea = document.getElementById("drag-drop");
         this.events();
     }
-
     events() {
         this.dragDropArea.addEventListener("drop", (e) => this.renderGpxfile(e));
         this.dragDropArea.addEventListener("dragover", (e) => this.dragHandlerFunc(e));
+        this.dragDropArea.addEventListener("dragenter", (e) => this.changeDropAreaColor(e));        
+        this.dragDropArea.addEventListener("dragleave", (e) => this.changeDropAreaColor(e));
     }
-
     renderGpxfile(e) {
-        e.preventDefault();
+        e.preventDefault();        
+        this.dragDropArea.classList.remove("drop-area__drag-over");
         let files = e.dataTransfer.files;
         let i;
 
@@ -25,9 +26,12 @@ class DragDropFile {
             }).addTo(simpleMap);
         }
     }
-
     dragHandlerFunc(e) {
         e.preventDefault();
+    }
+    changeDropAreaColor(e) {
+        e.preventDefault();        
+        this.dragDropArea.classList.toggle("drop-area__drag-over");
     }
 }
 
