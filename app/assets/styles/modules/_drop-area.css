@@ -5,6 +5,7 @@
     border: 2px dashed $darkGrey;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    position: relative;
     
     &__drag-over {
         z-index: 2001;
@@ -44,5 +45,11 @@
     &--is-visible {
         visibility: visible;
         opacity: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .drop-area {
+        display: none;
     }
 }

@@ -16,8 +16,8 @@
 
         &__anchor {
             text-decoration: none;
-            padding: 10px 0;
-            width: 85px;
+            padding: 10px;
+            max-width: 85px;
             text-align: center;
             display: block;
 
@@ -29,6 +29,7 @@
         &__contact {
             background-color: $mainGrey;
             color: #fff;
+            padding: 0 10px;
 
             &:hover {
                 background-color: $mainGrey;

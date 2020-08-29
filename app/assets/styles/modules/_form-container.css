@@ -4,8 +4,9 @@
 
 .select-files {
     margin: 0 auto;
-    position: absolute;
     width: 100%;
+    position: relative;
+    height: 100px;
 
     &__text-content {
         width: 50%;
@@ -13,11 +14,32 @@
     }
 }
 
+#add-files {
+    height: 100%;
+}
+
 .submit-files {
     position: absolute;
-    width: 35%;
+    width: 40%;
+    height: 50%;
     margin: 0 auto;
     top: 50%;
     transform: translateY(-50%);
     right: 3%;
+    
+    &__text-content {
+        font-size: 1rem;
+    }
+}
+
+#submit {
+    height: 100%;
+}
+
+@media (max-width: 1000px) {
+    .form-container {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        display: grid;
+    }
 }

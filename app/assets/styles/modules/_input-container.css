@@ -4,9 +4,23 @@
     height: 600px;
 
     &__component {
-        position: relative;  
         margin: 10px auto 0 auto;
         width: 93%;
         height: 75px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .input-container {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        display: inline-block;
+
+        &__component {
+            position: relative;  
+            margin: 10px auto 0 auto;
+            width: 93%;
+            height: auto;
+        }
     }
 }

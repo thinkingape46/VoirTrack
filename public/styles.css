@@ -21,7 +21,7 @@ body {
 .header {
     display: flex;
     margin-top: 30px;
-    width: 50%;
+    max-width: 768px;
     margin-left: auto;
     margin-right: auto;
     color: #000;
@@ -101,8 +101,8 @@ body {
     }
 .header__nav__item__anchor {
             text-decoration: none;
-            padding: 10px 0;
-            width: 85px;
+            padding: 10px;
+            max-width: 85px;
             text-align: center;
             display: block;
         }
@@ -112,6 +112,7 @@ body {
 .header__nav__item__contact {
             background-color: #5c5c5c;
             color: #fff;
+            padding: 0 10px;
         }
 .header__nav__item__contact:hover {
                 background-color: #5c5c5c;
@@ -140,18 +141,32 @@ body {
     height: 600px;
 }
 .input-container__component {
-        position: relative;  
         margin: 10px auto 0 auto;
         width: 93%;
         height: 75px;
     }
+@media (max-width: 1000px) {
+    .input-container {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+        .input-container__component {
+            position: relative;  
+            margin: 10px auto 0 auto;
+            width: 93%;
+            height: auto;
+        }
+}
 .drop-area {
     display: block;
     height: 23.3%;    
     background-color: #fff;
     border: 2px dashed #363636;
     cursor: pointer;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
+    position: relative; 
 }
 .drop-area__drag-over {
         z-index: 2001;
@@ -188,6 +203,11 @@ body {
         visibility: visible;
         opacity: 100%;
     }
+@media (max-width: 1000px) {
+    .drop-area {
+        display: none;
+    }
+}
 .btn {    
     display: block;
     margin: 0 auto;
@@ -225,20 +245,38 @@ body {
 }
 .select-files {
     margin: 0 auto;
-    position: absolute;
     width: 100%;
+    position: relative;
+    height: 100px;
 }
 .select-files__text-content {
         width: 50%;
         font-size: 1.5rem;
     }
+#add-files {
+    height: 100%;
+}
 .submit-files {
     position: absolute;
-    width: 35%;
+    width: 40%;
+    height: 50%;
     margin: 0 auto;
     top: 50%;
     transform: translateY(-50%);
     right: 3%;
+}
+.submit-files__text-content {
+        font-size: 1rem;
+    }
+#submit {
+    height: 100%;
+}
+@media (max-width: 1000px) {
+    .form-container {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        display: grid;
+    }
 }
 .main-container {
     display: flex;
@@ -247,6 +285,11 @@ body {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+@media (max-width: 1000px) {
+    .main-container {
+        flex-direction: column;
+    }
 }
 .stats-container {
     flex-basis: 24%;
