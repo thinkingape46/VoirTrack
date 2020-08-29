@@ -27,3 +27,13 @@
     stroke: none;
     transition: all 1s ease-out;
 }
+
+
+@media (max-width: 768px) {
+    .header__logo__img {
+        margin: 0;
+        width: 75px;
+        height: 75px;
+        animation: trip 3s ease-out infinite;
+    }
+}

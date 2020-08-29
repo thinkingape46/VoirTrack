@@ -43,3 +43,9 @@
         display: grid;
     }
 }
+
+@media (max-width: 600px) {
+    .select-files {
+        height: 75px;
+    }
+}

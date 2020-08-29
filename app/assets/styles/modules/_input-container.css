@@ -24,3 +24,8 @@
         }
     }
 }
+@media (max-width: 600px) {
+    .input-container {
+        margin-bottom: 6px;
+    }
+}

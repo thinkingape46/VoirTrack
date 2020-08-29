@@ -46,7 +46,7 @@
                 font-weight: 200;
         
                 &--item li {
-                    padding-bottom: 5px;
+                    padding-bottom: 9px;
                 }
             }
         }
@@ -65,4 +65,21 @@
         &:hover {
             transform: rotate(180deg);
         }
+}
+
+@media (max-width: 600px) {
+    .about__container {
+        width: 80%;
+        transform: translateY(16%);
+
+        &__content {
+            &__text {
+                margin: 10px 15px auto 15px;                
+            }
+
+            &__title {
+                font-size: 1.3rem;
+            }
+        }
+    }
 }
