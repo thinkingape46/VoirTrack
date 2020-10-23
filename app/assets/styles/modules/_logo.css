@@ -7,8 +7,6 @@
         height: 100px;
     }
 }
-
-
 @media (max-width: 768px) {
     .header__logo__img {
         margin: 0;
