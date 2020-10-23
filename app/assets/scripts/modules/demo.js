@@ -8,7 +8,7 @@ class Demo {
     }
 
     events() {
-        this.demoButton.addEventListener("click", (e) => this.renderGPX(e));
+        this.demoButton.addEventListener("click", (e) => this.parseGpx(e));
     }
 
     renderGPX(e) {
@@ -19,6 +19,19 @@ class Demo {
         new L.GPX(filePath, {async: true}).on('loaded', function(e) {
             simpleMap.fitBounds(e.target.getBounds())
         }).addTo(simpleMap);
+    }
+
+    parseGpx(e) {
+        e.preventDefault();
+
+        let fileUrl = "";
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', fileUrl);
+        xhr.responseType = XMLDocument;
+        xhr.onload = (e) => this.renderDemo(e);
+    }
+    renderDemo(e) {
+        
     }
 }
 
