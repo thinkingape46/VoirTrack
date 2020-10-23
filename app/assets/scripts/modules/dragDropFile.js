@@ -29,8 +29,9 @@ class DragDropFile {
         let i;
 
         for (i=0; i<files.length; i++) {
-
+            
             let filePath = URL.createObjectURL(files[i]);
+            console.log(filePath);
             new L.GPX(filePath, {async: true}).on('loaded', function(e) {
                 simpleMap.fitBounds(e.target.getBounds())
             }).addTo(simpleMap);
