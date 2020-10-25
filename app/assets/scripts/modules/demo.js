@@ -8,24 +8,15 @@ class Demo {
     events() {
         this.demoButton.addEventListener("click", (e) => this.parseGpx(e));
     }
-    renderGPX(e) {
-        e.preventDefault();
-        let filePath = '/assets/tracks/west.gpx';
-        
-
-        new L.GPX(filePath, {async: true}).on('loaded', function(e) {
-            simpleMap.fitBounds(e.target.getBounds())
-        }).addTo(simpleMap);
-    }
     parseGpx(e) {
         e.preventDefault();
-        let fileUrl = '/assets/tracks/crich.gpx';
+        let fileUrl = "/assets/tracks/crich.gpx";
         let xhr = new XMLHttpRequest();
         xhr.open('GET', fileUrl);
         xhr.responseType = XMLDocument;
         xhr.onload = (e) => {
             this.renderDemo(xhr.response);
-        }
+        } 
         xhr.send();
     }
     renderDemo(parsedGpx) {
@@ -70,8 +61,6 @@ class Demo {
     }    
     zoomLevelCalc(longMin, longMax) {
         
-        let longMin = Math.min.apply(null, longs);
-        let longMax = Math.max.apply(null, longs);
         let longWidth = Math.abs(longMin - longMax);
         let longRatio = longWidth/360;
 
