@@ -1,12 +1,17 @@
 .input-container {
     flex-basis: 24%;
     background-color: $darkGreyTransparent;
-    height: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 
     &__component {
         margin: 10px auto 0 auto;
         width: 93%;
-        height: 75px;
+
+        &__text-content {
+            margin: auto;
+        }
     }
 }
 

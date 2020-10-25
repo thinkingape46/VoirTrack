@@ -18,14 +18,11 @@
 
     &__title {
         display: flex;
-
-        &__text {
-            font-size: 2em;
-            margin: auto;
-            margin-left: 0;
-            font-weight: 300;
-            color: #000;
-        }
+        font-size: 2em;
+        margin: auto;
+        margin-left: 0;
+        font-weight: 300;
+        color: #000;
     }
 }
 

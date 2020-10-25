@@ -1,17 +1,12 @@
 .header__logo {
     display: flex;
-    
-    &__img {
-        margin: 0;
-        width: 100px;
-        height: 100px;
-    }
+    margin: 0;
+    width: 100px;
+    height: 100px;
 }
 @media (max-width: 768px) {
-    .header__logo__img {
-        margin: 0;
+    .header__logo {
         width: 75px;
         height: 75px;
-        animation: trip 3s ease-out infinite;
     }
 }

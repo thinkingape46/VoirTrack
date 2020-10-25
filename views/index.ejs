@@ -12,12 +12,8 @@
 <body style="background: url(./assets/images/background.jpg); background-size: cover; background-repeat: no-repeat;">
     <header class="header">
         <div class="header__main">
-            <div class="header__logo">
-                <img src="/assets/images/trip-visualizer.svg" class="header__logo__img" alt="logo of trip visualizer">                
-            </div>
-            <div class="header__title">
-                <p class="text-content header__title__text">Trip Visualizer</p>
-            </div>
+            <img src="/assets/images/trip-visualizer.svg" class="header__logo" alt="logo of trip visualizer">
+            <p class="text-content header__title">Trip Visualizer</p>
         </div>
 
         <div class="header__nav">
@@ -34,10 +30,10 @@
     <div class="main-container">
         <div class="input-container">
             <div class="input-container__component drop-area" id="drag-drop" draggable="true">
-                <p class="drop-area__text-content">Drop files here</p>
+                <p class="input-container__component__text-content drop-area__text-content">Drop files here</p>
             </div>
 
-            <div class="input-container__component form-container">
+            <div class="input-container__component select-container">
                 <div class="select-files">
                     <button class="btn btn__large btn--red-gradient btn--round-edge" id="add-files"><p class="text-content select-files__text-content">Add Files</p></button>
 
@@ -49,7 +45,7 @@
 
             </div>
             
-            <div class="input-container__component connect-strava">
+            <div class="input-container__component connect-strava" style="display: none;">
                 <button class="btn btn--orange btn--round-edge"><p class="text-content">Connect Strava</p></button>
             </div>
         </div>    

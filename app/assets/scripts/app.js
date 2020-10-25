@@ -5,6 +5,7 @@ import DragDropFile from './modules/dragDropFile';
 import SocialButtons from './modules/socialButtons';
 import AboutModal from './modules/aboutModal';
 import Demo from './modules/demo';
+import GpxDistance from './modules/gpxDistance';
 
 let dragDropFile = new DragDropFile();
 let gpxPlotter = new GpxPlotter();
