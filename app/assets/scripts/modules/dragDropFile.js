@@ -1,4 +1,7 @@
 import simpleMap from './simpleMap';
+import RenderGpx from './renderGpx';
+
+let renderGpx = new RenderGpx();
 
 class DragDropFile {
 
@@ -30,11 +33,23 @@ class DragDropFile {
 
         for (i=0; i<files.length; i++) {
             
-            let filePath = URL.createObjectURL(files[i]);
-            console.log(filePath);
+            let fileUrl = URL.createObjectURL(files[i]);
+
+            // let fileUrl = "/assets/tracks/1.gpx";
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', fileUrl);
+            xhr.responseType = XMLDocument;
+            xhr.onload = (e) => {
+                renderGpx.renderGpx(xhr.response);
+            } 
+            xhr.send();
+            // renderGpx.renderGpx(filePath);
+
+            /*
             new L.GPX(filePath, {async: true}).on('loaded', function(e) {
                 simpleMap.fitBounds(e.target.getBounds())
             }).addTo(simpleMap);
+            */
         }
     }
     dragHandlerFunc(e) {
