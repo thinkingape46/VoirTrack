@@ -5,6 +5,12 @@ import RandomColor from './randomColor';
 let gpxDistance = new GpxDistance();
 let randomColor = new RandomColor();
 
+class GpxTrack {
+    constructor() {
+
+    }
+}
+
 class RenderGpx {
     constructor() {
         this.longs = [];
@@ -14,9 +20,25 @@ class RenderGpx {
     renderGpx(xhrResponse) {
 
         let domParser = new DOMParser();
-        let gpxParsedDocument = domParser.parseFromString(xhrResponse, 'text/xml');
-        let trackPoints = gpxParsedDocument.getElementsByTagName("trkpt");
+        this.gpxParsedDocument = domParser.parseFromString(xhrResponse, 'text/xml');
+        let trackPoints = this.gpxParsedDocument.getElementsByTagName("trkpt");
+        let title = this.gpxParsedDocument.getElementsByTagName("name")[0].textContent;
 
+        // Some activities don't have time, update this code to not throw an error.
+        let time;
+        try {
+            time = this.gpxParsedDocument.getElementsByTagName("time")[0].textContent;
+        }
+        catch {
+            time = "No Time available"
+        }
+        let activityType = this.activityTypeCalc(this.gpxParsedDocument);
+        
+        console.log(title);
+        console.log(time);
+        console.log(activityType);
+        
+        console.log(this.gpxParsedDocument);
         let i;
         let latLongs = [];
         let lats = [];
@@ -55,6 +77,23 @@ class RenderGpx {
         let longWidth = Math.abs(this.longMin - this.longMax);
         let longRatio = longWidth/360;
         return parseInt(Math.log2(1 / longRatio));
+    }
+
+    activityTypeCalc(file) {
+        // This method works for activities that are exported through Strava.
+        let activities = {1: "Cycling", 9: "Running", 10: "Walking", undefined: "Unknown Activity"};
+        let activityId;
+        try {
+            activityId = parseInt(file.getElementsByTagName("type")[0].textContent);
+        }
+        catch(err) {
+            activityId = undefined;
+        }
+
+        if (activities[activityId] === undefined) {
+            return `Activity ID detected: ${activityId}`;
+        }        
+        return activities[activityId];       
     }
 }
 
