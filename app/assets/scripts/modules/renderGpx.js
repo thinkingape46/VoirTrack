@@ -41,7 +41,7 @@ class RenderGpx {
         this.zoomLevel = this.zoomLevelCalc();
         this.zoomLevelsList.push(this.zoomLevel);
         let zoomMin = Math.min.apply(null, this.zoomLevelsList);
-        let color = randomColor.randomColorgenerator();
+        let color = randomColor.randomColorGenerator();
         simpleMap.setView(this.centerCoordinate, zoomMin);
         L.polyline(latLongs, {color: color}).addTo(simpleMap);
         console.log(gpxDistance.distanceCalculator(latLongs));

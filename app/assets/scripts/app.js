@@ -1,6 +1,5 @@
 import '../styles/styles.css';
-import gpxFunc from './modules/gpxPlot';
-import GpxPlotter from './modules/gpxPlot';
+import GpxPlotter from './modules/selectFile';
 import DragDropFile from './modules/dragDropFile';
 import SocialButtons from './modules/socialButtons';
 import AboutModal from './modules/aboutModal';
