@@ -10,7 +10,7 @@ class RandomColor {
     
     randomColorGenerator() {
         let hue = Math.floor(Math.random() * 360);
-        let hslColor = `hsl(${hue}, 100%, 55%)`;
+        let hslColor = `hsl(${hue}, 100%, 40%)`;
         return hslColor;
     }
 }

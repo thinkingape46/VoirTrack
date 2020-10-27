@@ -22,6 +22,8 @@ class RenderGpx {
         let domParser = new DOMParser();
         this.gpxParsedDocument = domParser.parseFromString(xhrResponse, 'text/xml');
         let trackPoints = this.gpxParsedDocument.getElementsByTagName("trkpt");
+
+        // Gets the title of the track, every file is expected to be have one.
         let title = this.gpxParsedDocument.getElementsByTagName("name")[0].textContent;
 
         // Some activities don't have time, update this code to not throw an error.
@@ -32,12 +34,15 @@ class RenderGpx {
         catch {
             time = "No Time available"
         }
+        // Gets the activity type if available, this works well for strava.
         let activityType = this.activityTypeCalc(this.gpxParsedDocument);
         
-        console.log(title);
-        console.log(time);
-        console.log(activityType);
-        
+        let elevationData = this.elevationCalc();
+        let elevationStart = elevationData[0];
+        let elevationMin = Math.min.apply(null, elevationData);
+        let elevationMax = Math.max.apply(null, elevationData);
+        let elevationEnd = elevationData[elevationData.length - 1];
+       
         console.log(this.gpxParsedDocument);
         let i;
         let latLongs = [];
@@ -54,6 +59,7 @@ class RenderGpx {
             latLongs.push([lat, long]);
         }
 
+        let distance = gpxDistance.distanceCalculator(latLongs, elevationData);
         this.latMin = Math.min.apply(null, lats);
         this.latMax = Math.max.apply(null, lats);
         this.longMin = Math.min.apply(null, this.longs);
@@ -66,7 +72,12 @@ class RenderGpx {
         let color = randomColor.randomColorGenerator();
         simpleMap.setView(this.centerCoordinate, zoomMin);
         L.polyline(latLongs, {color: color}).addTo(simpleMap);
-        console.log(gpxDistance.distanceCalculator(latLongs));
+        
+        console.log(title);
+        console.log(time);
+        console.log(activityType);        
+        console.log(elevationStart, elevationMin, elevationMax, elevationEnd);
+        console.log(distance)
     }
 
     centerCoordinateCalc() {
@@ -94,6 +105,17 @@ class RenderGpx {
             return `Activity ID detected: ${activityId}`;
         }        
         return activities[activityId];       
+    }
+
+    elevationCalc() {
+        let elevationArray = [];
+        let ele = this.gpxParsedDocument.getElementsByTagName("ele");
+        let i;
+        for (i = 0; i < ele.length; i++) {
+            elevationArray.push(parseFloat(ele[i].textContent));
+        }
+        
+        return elevationArray;
     }
 }
 

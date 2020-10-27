@@ -2,4 +2,9 @@
     flex-basis: 24%;
     background-color: $darkGreyTransparent;
     height: 600px;
+
+    &__heading {
+        font-weight: 200;
+        text-align: center;
+    }
 }

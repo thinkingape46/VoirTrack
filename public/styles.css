@@ -306,6 +306,10 @@ body {
     background-color: rgba(54, 54, 54, 0.5);
     height: 600px;
 }
+.stats-container__heading {
+        font-weight: 200;
+        text-align: center;
+    }
 .map-container {
     flex-basis: 50%;
     height: 426px;
