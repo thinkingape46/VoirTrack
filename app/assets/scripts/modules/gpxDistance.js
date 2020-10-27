@@ -19,6 +19,7 @@ class GpxDistance {
         let distanceEle = 0;
         let angleArray = []
         var distanceArray = [];
+        let distanceEleArray = [];
         let sl = [];
         for (i = 0; i < latLongs.length-1; i++) {
             let smallestDistanceEle;
@@ -64,10 +65,10 @@ class GpxDistance {
             angleArray.push(angle);            
             smallestDistanceEle = elevationCorrection;            
             distanceEle += smallestDistanceEle;
-            
+            distanceEleArray.push(distanceEle);
         }
-        console.log(distance, distanceEle);
-        return distanceEle;
+        
+        return [distanceEle, distance, distanceArray, distanceEleArray];
     }
 
     /*

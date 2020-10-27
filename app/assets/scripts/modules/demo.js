@@ -13,7 +13,7 @@ class Demo {
     }
     parseGpx(e) {
         e.preventDefault();
-        let fileUrl = "/assets/tracks/35.66_strava.gpx";
+        let fileUrl = "/assets/tracks/walk.gpx";
         let xhr = new XMLHttpRequest();
         xhr.open('GET', fileUrl);
         xhr.responseType = XMLDocument;

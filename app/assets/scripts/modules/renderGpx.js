@@ -1,9 +1,11 @@
 import simpleMap from './simpleMap';
 import GpxDistance from './gpxDistance';
 import RandomColor from './randomColor';
+import GpxSpeed from './gpxSpeed';
 
 let gpxDistance = new GpxDistance();
 let randomColor = new RandomColor();
+const gpxSpeed = new GpxSpeed();
 
 class GpxTrack {
     constructor() {
@@ -28,12 +30,16 @@ class RenderGpx {
 
         // Some activities don't have time, update this code to not throw an error.
         let time;
+        let timeData;
         try {
             time = this.gpxParsedDocument.getElementsByTagName("time")[0].textContent;
+            timeData = this.gpxParsedDocument.getElementsByTagName("time");
         }
         catch {
             time = "No Time available"
         }
+             
+
         // Gets the activity type if available, this works well for strava.
         let activityType = this.activityTypeCalc(this.gpxParsedDocument);
         
@@ -59,7 +65,14 @@ class RenderGpx {
             latLongs.push([lat, long]);
         }
 
-        let distance = gpxDistance.distanceCalculator(latLongs, elevationData);
+        /* Returns an array of (in order): distanceEle, distance, distanceEleArray, and distanceArry */
+        let distanceData = gpxDistance.distanceCalculator(latLongs, elevationData);
+        let speedData
+
+        if (this.gpxParsedDocument.getElementsByTagName("time")[1]) {
+            let SpeedData = gpxSpeed.speedCalculator(distanceData[2], timeData, distanceData[0]);
+        }        
+
         this.latMin = Math.min.apply(null, lats);
         this.latMax = Math.max.apply(null, lats);
         this.longMin = Math.min.apply(null, this.longs);
@@ -76,8 +89,8 @@ class RenderGpx {
         console.log(title);
         console.log(time);
         console.log(activityType);        
-        console.log(elevationStart, elevationMin, elevationMax, elevationEnd);
-        console.log(distance)
+        console.log(`Elevation Start: ${elevationStart}m, Elevation min: ${elevationMin}m, Elevation max: ${elevationMax}m, Elevation end: ${elevationEnd}m`);
+        console.log(distanceData[0], distanceData[1]);
     }
 
     centerCoordinateCalc() {
