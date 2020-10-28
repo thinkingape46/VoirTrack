@@ -4,17 +4,13 @@ import RandomColor from './randomColor';
 import GpxSpeed from './gpxSpeed';
 import HeartRate from './heartRate';
 import Track from './track';
+import RenderStatsUi from './renderStatUi';
 
 let gpxDistance = new GpxDistance();
 let randomColor = new RandomColor();
 const gpxSpeed = new GpxSpeed();
 const heartRate = new HeartRate();
-
-class GpxTrack {
-    constructor() {
-
-    }
-}
+const renderStatUi = new RenderStatsUi();
 
 class RenderGpx {
     constructor() {
@@ -116,6 +112,9 @@ class RenderGpx {
 /* Instantiating a Track class */
         let track = new Track(title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr);
         console.log(track);
+
+        
+        renderStatUi.renderUi(track);
     }
 
     centerCoordinateCalc() {
