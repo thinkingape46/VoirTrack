@@ -3,6 +3,7 @@ import GpxDistance from './gpxDistance';
 import RandomColor from './randomColor';
 import GpxSpeed from './gpxSpeed';
 import HeartRate from './heartRate';
+import Track from './track';
 
 let gpxDistance = new GpxDistance();
 let randomColor = new RandomColor();
@@ -35,7 +36,7 @@ class RenderGpx {
         let time;
         let timeData;
         try {
-            time = this.gpxParsedDocument.getElementsByTagName("time")[0].textContent;
+            time = this.gpxParsedDocument.getElementsByTagName("time")[1].textContent;
             timeData = this.gpxParsedDocument.getElementsByTagName("time");
         }
         catch {
@@ -78,8 +79,10 @@ class RenderGpx {
 
         if (this.gpxParsedDocument.getElementsByTagName("time")[1]) {
             speedData = gpxSpeed.speedCalculator(distanceData[2], timeData, distanceData[0]);
-            console.log(speedData);
-        } 
+        }
+        else {
+            speedData = {timeArray: "NA", speedArray: "NA", duration: "NA", minSpeed: "NA", maxSpeed: "NA", avgSpeed: "NA"}
+        }
         /* Speed section end */
         
         /* Heart rate section start */
@@ -88,8 +91,12 @@ class RenderGpx {
 
         if (this.gpxParsedDocument.getElementsByTagName("gpxtpx:hr")[0]) {
             hrDataInput = this.gpxParsedDocument.getElementsByTagName("gpxtpx:hr");
+
+/* Returns object with properties: hrDataArray, minHr, avgHr, maxHr     */
             hrDataOutput = heartRate.hrCalculations(hrDataInput);
-            console.log(hrDataOutput);
+        }
+        else {
+            hrDataOutput = {hrDataArray: "NA", minHr: "NA", avgHr: "NA", maxHr: "NA"}
         }
         /* Heart rate section end */
 
@@ -106,11 +113,9 @@ class RenderGpx {
         simpleMap.setView(this.centerCoordinate, zoomMin);
         L.polyline(latLongs, {color: color}).addTo(simpleMap);
         
-        console.log(title);
-        console.log(time);
-        console.log(activityType);        
-        console.log(`Elevation Start: ${elevationStart}m, Elevation min: ${elevationMin}m, Elevation max: ${elevationMax}m, Elevation end: ${elevationEnd}m`);
-        console.log(distanceData[0], distanceData[1]);
+/* Instantiating a Track class */
+        let track = new Track(title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr);
+        console.log(track);
     }
 
     centerCoordinateCalc() {
