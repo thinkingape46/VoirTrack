@@ -36,7 +36,7 @@ body {
     }
 .header__title {
         display: flex;
-        font-size: 2em;
+        font-size: 1.25em;
         margin: auto;
         margin-left: 0;
         font-weight: 300;
@@ -58,23 +58,17 @@ body {
 .header__logo {
     display: flex;
     margin: 0;
-    width: 100px;
-    height: 100px;
-}
-@media (max-width: 768px) {
-    .header__logo {
-        width: 75px;
-        height: 75px;
-    }
+    width: 60px;
+    height: 60px;
 }
 .header__nav {
     display: flex;    
-    margin: auto auto 10px auto;
+    margin: auto;
 }
 .header__nav__ul {      
         margin: auto 0 auto auto;
         font-weight: 300;
-        font-size: 1.2rem;
+        font-size: 1em;
         transition: all 0.3s;
         display: flex;
     }
@@ -86,6 +80,7 @@ body {
 .header__nav__item__anchor {
             text-decoration: none;
             padding: 10px;
+            margin: auto;
             max-width: 85px;
 
             text-align: center;

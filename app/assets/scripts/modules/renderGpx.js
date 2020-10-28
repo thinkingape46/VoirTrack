@@ -2,10 +2,12 @@ import simpleMap from './simpleMap';
 import GpxDistance from './gpxDistance';
 import RandomColor from './randomColor';
 import GpxSpeed from './gpxSpeed';
+import HeartRate from './heartRate';
 
 let gpxDistance = new GpxDistance();
 let randomColor = new RandomColor();
 const gpxSpeed = new GpxSpeed();
+const heartRate = new HeartRate();
 
 class GpxTrack {
     constructor() {
@@ -25,10 +27,11 @@ class RenderGpx {
         this.gpxParsedDocument = domParser.parseFromString(xhrResponse, 'text/xml');
         let trackPoints = this.gpxParsedDocument.getElementsByTagName("trkpt");
 
-        // Gets the title of the track, every file is expected to be have one.
+        // Gets the title of the track, every file is expected to be have one */
         let title = this.gpxParsedDocument.getElementsByTagName("name")[0].textContent;
 
-        // Some activities don't have time, update this code to not throw an error.
+        /* The time this activity is recoded. 
+        Some activities don't have time, update this code to not throw an error. */
         let time;
         let timeData;
         try {
@@ -65,13 +68,30 @@ class RenderGpx {
             latLongs.push([lat, long]);
         }
 
+        /* Distance section start */
         /* Returns an array of (in order): distanceEle, distance, distanceEleArray, and distanceArry */
         let distanceData = gpxDistance.distanceCalculator(latLongs, elevationData);
-        let speedData
+        /* Distance section end */
+
+        /* Speed section start */
+        let speedData;
 
         if (this.gpxParsedDocument.getElementsByTagName("time")[1]) {
-            let SpeedData = gpxSpeed.speedCalculator(distanceData[2], timeData, distanceData[0]);
-        }        
+            speedData = gpxSpeed.speedCalculator(distanceData[2], timeData, distanceData[0]);
+            console.log(speedData);
+        } 
+        /* Speed section end */
+        
+        /* Heart rate section start */
+        let hrDataInput;
+        let hrDataOutput;
+
+        if (this.gpxParsedDocument.getElementsByTagName("gpxtpx:hr")[0]) {
+            hrDataInput = this.gpxParsedDocument.getElementsByTagName("gpxtpx:hr");
+            hrDataOutput = heartRate.hrCalculations(hrDataInput);
+            console.log(hrDataOutput);
+        }
+        /* Heart rate section end */
 
         this.latMin = Math.min.apply(null, lats);
         this.latMax = Math.max.apply(null, lats);

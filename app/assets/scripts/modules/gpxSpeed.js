@@ -12,11 +12,11 @@ class GpxSpeed {
             timeArray.push(new Date(time));
         }
 
-        for (i = 0; i < distanceData.length - 1; i++) {
+        for (i = 0; i < distanceData.length - 1; i+=5) {
 
-            if ((timeArray[i + 2] - timeArray[i + 1]) > 0) {
-                let speed = (distanceData[i + 1] - distanceData[i]) / ((timeArray[i + 2] - timeArray[i + 1]) / 3600000);
-    
+            if ((timeArray[i + 6] - timeArray[i + 1]) > 0) {
+
+                let speed = (distanceData[i + 5] - distanceData[i]) / ((timeArray[i + 6] - timeArray[i + 1]) / 3600000);                
                 speedArray.push(speed);
 
             }
@@ -27,7 +27,8 @@ class GpxSpeed {
         let minSpeed = Math.min.apply(null, speedArray);
         let maxSpeed = Math.max.apply(null, speedArray);
         let avgSpeed = distanceEle / duration;
-        console.log(distanceEle, duration, minSpeed, maxSpeed, avgSpeed);
+        let data = {timeArray: timeArray, speedArray: speedArray, duration: duration, minSpeed: minSpeed, maxSpeed: maxSpeed, avgSpeed: avgSpeed};
+        return data;
     }
 }
 
