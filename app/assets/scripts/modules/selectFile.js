@@ -1,5 +1,8 @@
 import GPX from 'leaflet-gpx';
 import simpleMap from './simpleMap';
+import RenderGpx from './renderGpx';
+
+let renderGpx = new RenderGpx();
 
 class GpxPlotter {
     constructor() {
@@ -23,10 +26,15 @@ class GpxPlotter {
 
             let i;
             for (i=0; i<files.length; i++) {
-                let filepath = URL.createObjectURL(files[i]);
-                new L.GPX(filepath, {async: true}).on('loaded', function(e) {
-                    simpleMap.fitBounds(e.target.getBounds())
-                }).addTo(simpleMap);
+                let fileUrl = URL.createObjectURL(files[i]);
+
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', fileUrl);
+                xhr.responseType = XMLDocument;
+                xhr.onload = (e) => {
+                    renderGpx.renderGpx(xhr.response);
+                } 
+                xhr.send();
             }}
                 
         else {

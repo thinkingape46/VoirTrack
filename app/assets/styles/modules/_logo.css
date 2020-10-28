@@ -1,12 +1,6 @@
 .header__logo {
     display: flex;
     margin: 0;
-    width: 100px;
-    height: 100px;
-}
-@media (max-width: 768px) {
-    .header__logo {
-        width: 75px;
-        height: 75px;
-    }
+    width: 60px;
+    height: 60px;
 }

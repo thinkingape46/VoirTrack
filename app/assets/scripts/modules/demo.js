@@ -13,13 +13,13 @@ class Demo {
     }
     parseGpx(e) {
         e.preventDefault();
-        let fileUrl = "/assets/tracks/1.gpx";
+        let fileUrl = "/assets/tracks/31.51_HR.gpx";
         let xhr = new XMLHttpRequest();
         xhr.open('GET', fileUrl);
         xhr.responseType = XMLDocument;
         xhr.onload = (e) => {
             gpx.renderGpx(xhr.response);
-        } 
+        }
         xhr.send();
     }       
 }
