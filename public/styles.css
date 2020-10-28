@@ -131,7 +131,7 @@ body {
             }
 }
 .input-container {
-    flex-basis: 24%;
+    flex-basis: 25%;
     background-color: rgba(54, 54, 54, 0.5);
     height: auto;
     display: flex;
@@ -297,16 +297,23 @@ body {
     }
 }
 .stats-container {
-    flex-basis: 24%;
+    flex-basis: 32%;
     background-color: rgba(54, 54, 54, 0.5);
     height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 .stats-container__heading {
         font-weight: 200;
         text-align: center;
+        padding: 15px 0 1px 0;
+        box-sizing: border-box;
+        margin: 0;
     }
+/* styling for activity box are listedi in "_stats_box.css" */
 .map-container {
-    flex-basis: 50%;
+    flex-basis: 40%;
     height: 426px;
     border: 2px solid #363636;    
     margin-bottom: 10px;
@@ -399,3 +406,36 @@ body {
                 font-size: 1.3rem;
             }
 }
+#activities {
+    overflow: hidden scroll;
+}
+#activities::-webkit-scrollbar {
+        display: none;
+    }
+.activity {
+    width: 95%;
+    border: 1px solid #5c5c5c;
+    margin: 10px auto;
+    padding: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 0 2px #fff;
+}
+.activity__head {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 5px 0 10px 0;
+        font-weight: 400;
+    }
+.activity__head__stat {
+            margin: 3px 0;
+        }
+.activity__row {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+    }
+.activity__stat {
+        margin: 0;
+        font-weight: 100;
+    }

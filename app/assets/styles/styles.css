@@ -11,5 +11,6 @@
 @import 'modules/_main-container';
 @import 'modules/_stats-container';
 @import 'modules/_map';
-@import 'modules/_connect-strava.css';
-@import 'modules/_about.css';
+@import 'modules/_connect-strava';
+@import 'modules/_about';
+@import 'modules/_stats-box';

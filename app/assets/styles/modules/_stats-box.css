@@ -1,0 +1,39 @@
+#activities {
+    overflow: hidden scroll;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.activity {
+    width: 95%;
+    border: 1px solid #5c5c5c;
+    margin: 10px auto;
+    padding: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 0 2px #fff;
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 5px 0 10px 0;
+        font-weight: 400;
+
+        &__stat {
+            margin: 3px 0;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+    }
+
+    &__stat {
+        margin: 0;
+        font-weight: 100;
+    }
+}

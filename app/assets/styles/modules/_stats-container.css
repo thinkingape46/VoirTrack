@@ -1,10 +1,18 @@
 .stats-container {
-    flex-basis: 24%;
+    flex-basis: 32%;
     background-color: $darkGreyTransparent;
     height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 
     &__heading {
         font-weight: 200;
         text-align: center;
+        padding: 15px 0 1px 0;
+        box-sizing: border-box;
+        margin: 0;
     }
 }
+
+/* styling for activity box are listedi in "_stats_box.css" */

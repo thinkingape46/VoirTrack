@@ -1,5 +1,5 @@
 .map-container {
-    flex-basis: 50%;
+    flex-basis: 40%;
     height: 426px;
     border: 2px solid $darkGrey;    
     margin-bottom: 10px;
