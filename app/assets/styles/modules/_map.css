@@ -14,5 +14,6 @@
     .map-container {
         margin-bottom: 6px;
         height: 250px;
+        flex-basis: 49%;
     }
 }

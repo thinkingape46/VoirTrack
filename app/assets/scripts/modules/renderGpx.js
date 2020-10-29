@@ -22,6 +22,7 @@ class RenderGpx {
 
         let domParser = new DOMParser();
         this.gpxParsedDocument = domParser.parseFromString(xhrResponse, 'text/xml');
+        console.log(this.gpxParsedDocument);
         let trackPoints = this.gpxParsedDocument.getElementsByTagName("trkpt");
 
         // Gets the title of the track, every file is expected to be have one */
@@ -36,20 +37,26 @@ class RenderGpx {
             timeData = this.gpxParsedDocument.getElementsByTagName("time");
         }
         catch {
-            time = "No Time available"
+            time = "NA"
         }
              
 
         // Gets the activity type if available, this works well for strava.
         let activityType = this.activityTypeCalc(this.gpxParsedDocument);
         
-        let elevationData = this.elevationCalc();
-        let elevationStart = elevationData[0];
-        let elevationMin = Math.min.apply(null, elevationData);
-        let elevationMax = Math.max.apply(null, elevationData);
-        let elevationEnd = elevationData[elevationData.length - 1];
-       
-        console.log(this.gpxParsedDocument);
+        let elevationData, elevationStart, elevationMax;
+
+        if (this.gpxParsedDocument.getElementsByTagName("ele")[0]) {
+            elevationData = this.elevationCalc();
+            elevationStart = elevationData[0];
+            elevationMax = Math.max.apply(null, elevationData);
+        }
+        else {
+            elevationStart = 'NA';
+            elevationMax = 'NA';
+            elevationData = [];
+        }
+        
         let i;
         let latLongs = [];
         let lats = [];
@@ -70,7 +77,7 @@ class RenderGpx {
         let distanceData = gpxDistance.distanceCalculator(latLongs, elevationData);
         /* Distance section end */
 
-        /* Speed section start */
+/* SPEED SECTION START */
         let speedData;
 
         if (this.gpxParsedDocument.getElementsByTagName("time")[1]) {
@@ -79,7 +86,7 @@ class RenderGpx {
         else {
             speedData = {timeArray: "NA", speedArray: "NA", duration: "NA", minSpeed: "NA", maxSpeed: "NA", avgSpeed: "NA"}
         }
-        /* Speed section end */
+/* SPEED SECTION END */
         
         /* Heart rate section start */
         let hrDataInput;
@@ -111,8 +118,6 @@ class RenderGpx {
         
 /* Instantiating a Track class */
         let track = new Track(title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr);
-        console.log(track);
-
         
         renderStatUi.renderUi(track);
     }
@@ -128,7 +133,7 @@ class RenderGpx {
     }
 
     activityTypeCalc(file) {
-        // This method works for activities that are exported through Strava.
+/* This method works for activities that are exported through Strava. */
         let activities = {1: "Cycling", 9: "Running", 10: "Walking", undefined: "Unknown Activity"};
         let activityId;
         try {
@@ -148,10 +153,12 @@ class RenderGpx {
         let elevationArray = [];
         let ele = this.gpxParsedDocument.getElementsByTagName("ele");
         let i;
-        for (i = 0; i < ele.length; i++) {
-            elevationArray.push(parseFloat(ele[i].textContent));
+
+        if (this.gpxParsedDocument.getElementsByTagName("ele")) {
+            for (i = 0; i < ele.length; i++) {
+                elevationArray.push(parseFloat(ele[i].textContent));
+            }
         }
-        
         return elevationArray;
     }
 }

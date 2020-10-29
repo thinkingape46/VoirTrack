@@ -158,8 +158,9 @@ body {
 }
 @media (max-width: 600px) {
     .input-container {
-        margin: 6px;
+        margin: 5px;
         flex-basis: auto;
+        background-color: rgba(0,0,0,0);
     }
 }
 .drop-area {
@@ -273,6 +274,9 @@ body {
     }
 }
 @media (max-width: 600px) {
+    .select-container {
+        margin: 0 auto;
+    }
     .select-files {
         height: 50px;
         width: 50%;
@@ -306,7 +310,8 @@ body {
 }
 @media (max-width: 600px) {
     .main-container {
-        margin-top: 6px;
+        min-height: 100vh;
+        overflow: auto;
     }
 }
 .stats-container {
@@ -324,6 +329,12 @@ body {
         margin: 0;
     }
 @media (max-width: 600px) {
+    .stats-container {
+        flex-grow: 1;
+        flex-basis: 37%;
+        overflow: visible;
+    }
+
         .stats-container__heading {
             padding: 5px 0;
             font-size: 0.8em;
@@ -344,6 +355,7 @@ body {
     .map-container {
         margin-bottom: 6px;
         height: 250px;
+        flex-basis: 49%;
     }
 }
 .connect-strava {
@@ -429,8 +441,15 @@ body {
     box-sizing: border-box;
 }
 #activities::-webkit-scrollbar {
-        display: none;
+        width: 5px;
+        background-color: #363636;
     }
+#activities::-webkit-scrollbar-button {
+            display: none;
+        }
+#activities::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
 .activity {
     width: 95%;
     margin: 10px auto;
@@ -463,6 +482,7 @@ body {
 @media (max-width: 600px) {
     #activities {
         margin: 0;
+        overflow: hidden visible;
     }
     .activity {
         margin: 5px auto;

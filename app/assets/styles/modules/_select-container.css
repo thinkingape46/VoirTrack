@@ -45,6 +45,9 @@
 }
 
 @media (max-width: 600px) {
+    .select-container {
+        margin: 0 auto;
+    }
     .select-files {
         height: 50px;
         width: 50%;
