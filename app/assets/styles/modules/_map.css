@@ -1,7 +1,6 @@
 .map-container {
-    flex-basis: 40%;
-    height: 426px;
-    border: 2px solid $darkGrey;    
+    flex-basis: 47%;
+    height: 426px;  
     margin-bottom: 10px;
 }
 
@@ -14,6 +13,6 @@
 @media (max-width: 600px) {
     .map-container {
         margin-bottom: 6px;
-        height: 400px;
+        height: 250px;
     }
 }

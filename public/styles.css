@@ -20,7 +20,7 @@ body {
 }
 .header {
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
     max-width: 768px;
     margin-left: auto;
     margin-right: auto;
@@ -131,14 +131,13 @@ body {
             }
 }
 .input-container {
-    flex-basis: 25%;
+    flex-basis: 20%;
     background-color: rgba(54, 54, 54, 0.5);
-    height: auto;
     display: flex;
     flex-direction: column;
 }
 .input-container__component {
-        margin: 10px auto 0 auto;
+        margin: 5px auto;
         width: 93%;
     }
 .input-container__component__text-content {
@@ -146,21 +145,21 @@ body {
         }
 @media (max-width: 1000px) {
     .input-container {
-        flex-basis: 100%;
-        margin-bottom: 10px;
+        margin: 10px;
         display: inline-block;
     }
 
         .input-container__component {
             position: relative;  
-            margin: 10px auto 0 auto;
+            margin: 10px auto;
             width: 93%;
             height: auto;
         }
 }
 @media (max-width: 600px) {
     .input-container {
-        margin-bottom: 6px;
+        margin: 6px;
+        flex-basis: auto;
     }
 }
 .drop-area {
@@ -275,13 +274,26 @@ body {
 }
 @media (max-width: 600px) {
     .select-files {
-        height: 75px;
+        height: 50px;
+        width: 50%;
     }
+
+        .select-files__text-content {
+            font-size: 1rem;
+        }
+    .submit-files {
+        height: 75%;
+    }
+
+        .submit-files__text-content {
+            font-size: 0.9rem;
+        }
 }
 .main-container {
     display: flex;
     justify-content: space-between;
-    max-width: 98%;
+    max-width: 99%;
+    height: 80vh;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -289,6 +301,7 @@ body {
 @media (max-width: 1000px) {
     .main-container {
         flex-direction: column;
+        margin-top: 0;
     }
 }
 @media (max-width: 600px) {
@@ -299,7 +312,6 @@ body {
 .stats-container {
     flex-basis: 32%;
     background-color: rgba(54, 54, 54, 0.5);
-    height: 600px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -311,11 +323,16 @@ body {
         box-sizing: border-box;
         margin: 0;
     }
+@media (max-width: 600px) {
+        .stats-container__heading {
+            padding: 5px 0;
+            font-size: 0.8em;
+        }
+}
 /* styling for activity box are listedi in "_stats_box.css" */
 .map-container {
-    flex-basis: 40%;
-    height: 426px;
-    border: 2px solid #363636;    
+    flex-basis: 47%;
+    height: 426px;  
     margin-bottom: 10px;
 }
 .map-id {
@@ -326,7 +343,7 @@ body {
 @media (max-width: 600px) {
     .map-container {
         margin-bottom: 6px;
-        height: 400px;
+        height: 250px;
     }
 }
 .connect-strava {
@@ -408,16 +425,18 @@ body {
 }
 #activities {
     overflow: hidden scroll;
+    margin: 8px;
+    box-sizing: border-box;
 }
 #activities::-webkit-scrollbar {
         display: none;
     }
 .activity {
     width: 95%;
-    border: 1px solid #5c5c5c;
     margin: 10px auto;
     padding: 6px;
     box-sizing: border-box;
+    background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(10,10,10,0.5));
     box-shadow: 0 0 2px #fff;
 }
 .activity__head {
@@ -425,7 +444,8 @@ body {
         flex-direction: column;
         justify-content: space-evenly;
         margin: 5px 0 10px 0;
-        font-weight: 400;
+        font-size: 0.8em;
+        font-weight: 300;
     }
 .activity__head__stat {
             margin: 3px 0;
@@ -438,4 +458,26 @@ body {
 .activity__stat {
         margin: 0;
         font-weight: 100;
+        font-size: 0.7em;
     }
+@media (max-width: 600px) {
+    #activities {
+        margin: 0;
+    }
+    .activity {
+        margin: 5px auto;
+    }
+
+        .activity__head {
+            margin: 4px 0;
+            font-size: 0.7rem;
+        }
+
+        .activity__row {
+            margin: 2px 0;
+        }
+
+        .activity__stat {
+            font-size: 0.6rem;
+        }
+}

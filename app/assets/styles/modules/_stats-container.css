@@ -1,7 +1,6 @@
 .stats-container {
     flex-basis: 32%;
     background-color: $darkGreyTransparent;
-    height: 600px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -12,6 +11,14 @@
         padding: 15px 0 1px 0;
         box-sizing: border-box;
         margin: 0;
+    }
+}
+@media (max-width: 600px) {
+    .stats-container {
+        &__heading {
+            padding: 5px 0;
+            font-size: 0.8em;
+        }
     }
 }
 
