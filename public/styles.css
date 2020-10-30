@@ -503,6 +503,7 @@ body {
 .graph-container {    
     flex-basis: 150px;
     box-shadow: 0 0 3px #fff;
+    background: linear-gradient(45deg, #363636, #5c5c5c);
     display: flex;
     align-items: flex-end;
     margin: 10px 0 0 0;

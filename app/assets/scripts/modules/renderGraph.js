@@ -3,39 +3,28 @@ class RenderGraph {
     constructor() {
         this.ctx = document.getElementById('graph');
         this.graphCtx = this.ctx.getContext('2d');
-        this.graph()
+        // this.graph()
+        this.width = this.ctx.width;
+        this.height = this.ctx.height;
     }
 
-    graph() {                
-        
-        this.graphCtx.fillStyle = 'rgba(200, 50, 50, 0)';
-        this.graphCtx.fillRect(0, 0, 500, 150);
-    }
-
-    plotSpeedGraph(speedArray, maxSpeed) {
-        
-        let width = this.ctx.width;
-        let height = this.ctx.height;
-
-        let length = speedArray.length;
-        let xUnit = width / length;
-        let yUnit = (height / maxSpeed);
-        this.graphCtx.fillStyle = 'rgba(200, 50, 50, 0.75)';
-
-        console.log(xUnit, yUnit);
+    plotGraph(array, arrayMax, color, graphNumber) {                
+        let length = array.length;
+        let xUnit = this.width / length;
+        let yUnit = (this.height / arrayMax);
+        this.graphCtx.fillStyle = color;
 
         let i;
 
         this.graphCtx.beginPath();
-        this.graphCtx.moveTo(0, 150);
+        this.graphCtx.moveTo(0, this.height);
 
-        for (i = 0; i < speedArray.length; i++) {
-            this.graphCtx.lineTo(i * xUnit, speedArray[i] * yUnit);
+        for (i = 0; i < array.length; i++) {
+            this.graphCtx.lineTo(i * xUnit, (this.height - (array[i] * yUnit)));
         }
-        this.graphCtx.lineTo(500, 150);
+        this.graphCtx.lineTo(this.width, this.height);
         this.graphCtx.fill();
-        console.log('speed graph plotted');
-
+        console.log('plotted');
     }
 }
 

@@ -32,8 +32,18 @@ class RenderStatsUi {
         `;
         this.activities.insertAdjacentHTML('beforeend', activity);
 
-        renderGraph.plotSpeedGraph(track.speedArray, track.maxSpeed);
-
+        if (track.avgHr != 'NA' && track.maxHr != 'NA') {
+            let color = 'rgba(255, 0, 0, .45)'
+            renderGraph.plotGraph(track.hrDataArray, track.maxHr, color, 1);
+        }
+        if (track.elevationStart != 'NA' && track.elevationMax != 'NA') {
+            let color = 'rgba(0, 255, 0, .45)'
+            renderGraph.plotGraph(track.elevationArray, track.elevationMax, color, 2);
+        }
+        if (track.avgSpeed != 'NA' && track.maxSpeed != 'NA') {
+            let color = 'rgba(0, 0, 255, .45)'
+            renderGraph.plotGraph(track.speedArray, track.maxSpeed, color, 3);
+        }
     }
 
     getDate(date) {
