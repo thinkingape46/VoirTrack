@@ -117,7 +117,7 @@ class RenderGpx {
         L.polyline(latLongs, {color: color}).addTo(simpleMap);
         
 /* Instantiating a Track class */
-        let track = new Track(title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr, color);
+        let track = new Track(title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr, color, speedData.speedArray, hrDataOutput.hrDataArray);
         
         renderStatUi.renderUi(track);
     }

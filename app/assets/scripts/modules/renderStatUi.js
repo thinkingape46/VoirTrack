@@ -1,3 +1,6 @@
+import RenderGraph from './renderGraph';
+let renderGraph = new RenderGraph();
+
 class RenderStatsUi {
     
     constructor() {
@@ -11,7 +14,7 @@ class RenderStatsUi {
         let elevationStats = this.sanitizeElevation(track);
         let heartData = this.sanitizeHeartRate(track);
         let i;
-        console.log(track.date);
+        
         let activity = `
             <div class="activity ${track.date}" style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), ${track.color});">
                 <div class="activity__head">
@@ -28,6 +31,9 @@ class RenderStatsUi {
             </div>
         `;
         this.activities.insertAdjacentHTML('beforeend', activity);
+
+        renderGraph.plotSpeedGraph(track.speedArray, track.maxSpeed);
+
     }
 
     getDate(date) {
