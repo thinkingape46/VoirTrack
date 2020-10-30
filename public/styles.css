@@ -82,21 +82,17 @@ body {
             padding: 10px;
             margin: auto;
             max-width: 85px;
-
+            color: #000;
             text-align: center;
             display: block;
         }
-.header__nav__item__anchor:active, .header__nav__item__anchor:visited {
-                color: inherit;
+.header__nav__item__anchor__contact {
+                color: #fff;
             }
 .header__nav__item__contact {
             background-color: #5c5c5c;
-            color: #fff;
             padding: 0 10px;
         }
-.header__nav__item__contact:hover {
-                background-color: #5c5c5c;
-            }
 .header__nav__social {
         height: 43px;
         list-style: none;
@@ -350,6 +346,7 @@ body {
     background-color: lightblue;
     width: 100%;
     height: 100%;
+    box-shadow: 0 0 13px #000;
 }
 @media (max-width: 600px) {
     .map-container {
@@ -500,4 +497,7 @@ body {
         .activity__stat {
             font-size: 0.6rem;
         }
+}
+#graph {
+    display: none;
 }

@@ -20,23 +20,18 @@
             padding: 10px;
             margin: auto;
             max-width: 85px;
-
+            color: #000;
             text-align: center;
             display: block;
 
-            &:active, &:visited {
-                color: inherit;
+            &__contact {
+                color: #fff;
             }
         }
 
         &__contact {
             background-color: $mainGrey;
-            color: #fff;
             padding: 0 10px;
-
-            &:hover {
-                background-color: $mainGrey;
-            }
         }
     }
 

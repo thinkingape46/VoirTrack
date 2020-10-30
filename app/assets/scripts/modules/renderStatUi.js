@@ -10,9 +10,10 @@ class RenderStatsUi {
         let speedStats = this.sanitizeSpeed(track);
         let elevationStats = this.sanitizeElevation(track);
         let heartData = this.sanitizeHeartRate(track);
-
+        let i;
+        console.log(track.date);
         let activity = `
-            <div class="activity">
+            <div class="activity ${track.date}" style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), ${track.color});">
                 <div class="activity__head">
                     <p class="activity__head__stat title">${track.title}</p>
                     <p class="activity__head__stat date">${formattedDate}</p>
