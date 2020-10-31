@@ -33,16 +33,16 @@ class RenderStatsUi {
         this.activities.insertAdjacentHTML('beforeend', activity);
 
         if (track.avgHr != 'NA' && track.maxHr != 'NA') {
-            let color = 'rgba(255, 0, 0, .45)'
-            renderGraph.plotGraph(track.hrDataArray, track.maxHr, color, 1);
+            let color = 'rgba(255, 0, 64, 1)'
+            renderGraph.plotHrGraph(track.hrDataArray, track.maxHr, color);
         }
         if (track.elevationStart != 'NA' && track.elevationMax != 'NA') {
-            let color = 'rgba(0, 255, 0, .45)'
-            renderGraph.plotGraph(track.elevationArray, track.elevationMax, color, 2);
+            let color = 'rgba(0, 230, 187, 1)'
+            renderGraph.plotelevationGraph(track.elevationArray, track.elevationMax, color, 2);
         }
         if (track.avgSpeed != 'NA' && track.maxSpeed != 'NA') {
-            let color = 'rgba(0, 0, 255, .45)'
-            renderGraph.plotGraph(track.speedArray, track.maxSpeed, color, 3);
+            let color = 'rgba(0, 153, 255, 1)'
+            renderGraph.plotSpeedGraph(track.speedArray, track.maxSpeed, color);
         }
     }
 

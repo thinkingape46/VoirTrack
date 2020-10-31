@@ -38,5 +38,13 @@
         background-color: $lightGrey;
         opacity: 80%;
         margin-top: 0;
+
+        &__main {
+            margin-top: 3px;
+        }
+            
+        &__title {
+            font-size: 1em;
+        }
     }
 }
