@@ -5,6 +5,7 @@ class RenderStatsUi {
     
     constructor() {
         this.activities = document.getElementById("activities");
+        this.statsContainer = document.querySelectorAll(".stats-container")[0];
     }
 
     renderUi(track) {
@@ -31,6 +32,8 @@ class RenderStatsUi {
             </div>
         `;
         this.activities.insertAdjacentHTML('beforeend', activity);
+
+        this.statsContainer.classList.add("stats-container--is-visible");
 
         if (track.avgHr != 'NA' && track.maxHr != 'NA') {
             let color = 'rgba(255, 0, 64, 1)'

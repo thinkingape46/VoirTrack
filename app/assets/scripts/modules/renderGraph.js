@@ -32,7 +32,6 @@ class RenderGraph {
         }
         this.speedGraphCtx.lineTo(this.width, this.height);
         this.speedGraphCtx.fill();
-        console.log('speed plotted');
     }
 
     plotelevationGraph(array, arrayMax, color) {                
@@ -51,7 +50,6 @@ class RenderGraph {
         }
         this.elevationGraphCtx.lineTo(this.width, this.height);
         this.elevationGraphCtx.fill();
-        console.log('elevation plotted');
     }
 
     plotHrGraph(array, arrayMax, color) {                
@@ -70,7 +68,6 @@ class RenderGraph {
         }
         this.hrGraphCtx.lineTo(this.width, this.height);
         this.hrGraphCtx.fill();
-        console.log('elevation plotted');
     }
 }
 

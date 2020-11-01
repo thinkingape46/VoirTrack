@@ -14,4 +14,5 @@
 @import 'modules/_connect-strava';
 @import 'modules/_about';
 @import 'modules/_stats-box';
-@import 'modules/_graph.css'
+@import 'modules/_graph';
+@import 'modules/_footer';

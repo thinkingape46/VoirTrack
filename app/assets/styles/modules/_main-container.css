@@ -17,5 +17,6 @@
 @media (max-width: 600px) {
     .main-container {
         overflow: auto;
+        justify-content: start;
     }
 }

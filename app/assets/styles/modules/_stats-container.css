@@ -17,6 +17,11 @@
     .stats-container {
         flex-grow: 1;
         flex-basis: 37%;
+        display: none;
+
+        &--is-visible {
+            display: flex;
+        }
 
         &__heading {
             padding: 5px 0;
