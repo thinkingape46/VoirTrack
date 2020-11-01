@@ -7,6 +7,8 @@
     height: 80px;
 
     &__text {
+        
+        font-size: .8rem;
         text-align: center;
         margin: auto;
         color: #fff;
