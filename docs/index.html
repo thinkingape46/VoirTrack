@@ -11,8 +11,8 @@
 </head>
 <body style="background: url(./assets/images/background.jpg); background-size: cover; background-repeat: no-repeat;">
     <header class="header">
-        <div class="header__main">
-            <img src="assets/images/trip-visualizer.svg" class="header__logo" alt="logo of trip visualizer">
+        <div class="header__main" draggable="false">
+            <img src="assets/images/trip-visualizer.svg" class="header__logo" alt="logo of trip visualizer" draggable="false">
             <p class="text-content header__title">Trip Visualizer</p>
         </div>
 
@@ -22,7 +22,7 @@
                 <li id="about" class="header__nav__item"><a class="header__nav__item__anchor" href="#">About</a></li>
                 <li id="social-button" class="header__nav__social"><a class="header__nav__social__anchor" target="_blank" href="https://www.linkedin.com/in/jagadeesh59621/"><img src="assets/images/linkedin.svg" alt="my Linkedin profile"></a></li>
                 <li id="social-button" class="header__nav__social"><a class="header__nav__social__anchor" target="_blank" href="https://github.com/thinkingape46"><img src="assets/images/github.svg" alt="my Gihhub profile"></a></li>
-                <li id="show-social-buttons" class="header__nav__item header__nav__item__contact"><a class="header__nav__item__anchor" href="#">Contact</a></li>
+                <li id="show-social-buttons" class="header__nav__item header__nav__item__contact"><a class="header__nav__item__anchor header__nav__item__anchor__contact" href="#">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -39,7 +39,7 @@
 
                     <form class="submit-files">
                         <input type="file" class="gpx-file-input" id="gpx-file" multiple>
-                        <button class="btn btn--green btn--round-edge" id="submit" type="submit"><p class="text-content submit-files__text-content">Plot GPX</p></button>
+                        <button class="btn btn--green btn--round-edge" id="submit" type="submit"><p class="text-content submit-files__text-content">Plot</p></button>
                     </form>
                 </div>
 
@@ -51,11 +51,23 @@
         </div>    
         <div class="map-container">
             <div id="mapid" class="map-id"></div>
+            <div class="graph-container">
+                <canvas class="graph" id="hrGraph">This area is rendered using Canvas</canvas>
+                <canvas class="graph" id="elevationGraph">This area is rendered using Canvas</canvas>
+                <canvas class="graph" id="speedGraph">This area is rendered using Canvas</canvas>
+            </div>
         </div>
-        <div class="stats-container"></div>
+        <div class="stats-container">
+            <p class="stats-container__heading">Statistics</p>
+            <div id="activities">
+                
+            </div>
+        </div>
     </div>
 
-
+    <footer class="footer">
+        <p class="text-content footer__text">&copy; Jagadeesh Kumar</p>
+    </footer>
 
     <script src="main-bundled.js"></script>
     <script src="1.main-bundled.js"></script>
