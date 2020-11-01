@@ -1,6 +1,7 @@
 .input-container {
-    flex-basis: 20%;
+    flex-basis: 25%;
     background-color: $darkGreyTransparent;
+    box-shadow: 0 0 5px $mainGrey;
     display: flex;
     flex-direction: column;
 
@@ -18,6 +19,7 @@
     .input-container {
         margin: 10px;
         display: inline-block;
+        box-shadow: none;
 
         &__component {
             position: relative;  
@@ -27,9 +29,9 @@
         }
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 425px) {
     .input-container {
-        margin: 2px;
+        margin: 6px;
         flex-basis: auto;
         background-color: rgba(0,0,0,0);
     }

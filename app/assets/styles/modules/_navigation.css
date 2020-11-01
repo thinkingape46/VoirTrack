@@ -76,10 +76,17 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 425px) {
     .header__nav {
         &__ul {
             font-size: 0.8rem;
+        }
+
+        &__item {
+            
+            &__anchor {
+                color: #fff;
+            }
         }
     }
 }

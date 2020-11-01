@@ -35,6 +35,9 @@ class RenderStatsUi {
 
         this.statsContainer.classList.add("stats-container--is-visible");
 
+/*  Clearing the canvas before repaintnig */
+        renderGraph.clearCanvas();
+
         if (track.avgHr != 'NA' && track.maxHr != 'NA') {
             let color = 'rgba(255, 0, 64, 1)'
             renderGraph.plotHrGraph(track.hrDataArray, track.maxHr, color);

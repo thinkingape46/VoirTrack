@@ -16,7 +16,19 @@ class RenderGraph {
         this.height = this.hrGraph.height;
     }
 
-    plotSpeedGraph(array, arrayMax, color) {                
+    clearCanvas() {
+/* Clearing the canvas before repainting */
+        
+    this.speedGraphCtx.clearRect(0, 0, this.width, this.height);
+    this.elevationGraphCtx.clearRect(0, 0, this.width, this.height);
+    this.hrGraphCtx.clearRect(0, 0, this.width, this.height);
+    
+    }
+
+    plotSpeedGraph(array, arrayMax, color) {
+
+
+
         let length = array.length;
         let xUnit = this.width / length;
         let yUnit = this.height / arrayMax;
@@ -34,7 +46,8 @@ class RenderGraph {
         this.speedGraphCtx.fill();
     }
 
-    plotelevationGraph(array, arrayMax, color) {                
+    plotelevationGraph(array, arrayMax, color) {
+
         let length = array.length;
         let xUnit = this.width / length;
         let yUnit = this.height / arrayMax;
@@ -52,7 +65,8 @@ class RenderGraph {
         this.elevationGraphCtx.fill();
     }
 
-    plotHrGraph(array, arrayMax, color) {                
+    plotHrGraph(array, arrayMax, color) {
+
         let length = array.length;
         let xUnit = this.width / length;
         let yUnit = this.height / arrayMax;

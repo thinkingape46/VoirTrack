@@ -1,20 +1,25 @@
 .footer {
     display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
 
     &__text {
         text-align: center;
         margin: auto;
+        color: #fff;
+
+        &:visited {
+            color: #fff;
+        }
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 425px) {
     .footer {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
         height: 30px;
-        background: linear-gradient(45deg, #5c5c5c, #363636);
 
         &__text {
             font-weight: 200;

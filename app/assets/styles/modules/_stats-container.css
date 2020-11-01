@@ -1,6 +1,7 @@
 .stats-container {
-    flex-basis: 32%;
+    flex-basis: 25%;
     background-color: $darkGreyTransparent;
+    box-shadow: 0 0 5px $mainGrey;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -13,7 +14,7 @@
         margin: 0;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 425px) {
     .stats-container {
         flex-grow: 1;
         flex-basis: 37%;

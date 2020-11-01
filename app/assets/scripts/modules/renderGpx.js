@@ -22,7 +22,6 @@ class RenderGpx {
 
         let domParser = new DOMParser();
         this.gpxParsedDocument = domParser.parseFromString(xhrResponse, 'text/xml');
-        console.log(this.gpxParsedDocument);
         let trackPoints = this.gpxParsedDocument.getElementsByTagName("trkpt");
 
         // Gets the title of the track, every file is expected to be have one */

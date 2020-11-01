@@ -44,7 +44,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 425px) {
     .select-container {
         margin: 0 auto;
     }

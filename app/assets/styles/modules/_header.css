@@ -17,26 +17,19 @@
     }
 
     &__title {
+        font-family: 'Exo 2', sans-serif;
         display: flex;
         font-size: 1.25em;
         margin: auto;
         margin-left: 0;
-        font-weight: 300;
         color: #000;
     }
 }
 
-@media (max-width: 768px)  and (min-width: 601px) {
-    .header {
-        margin: 10px 20px;
-    }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 425px) {
     .header {
         flex-direction: column;
-        background-color: $lightGrey;
-        opacity: 80%;
+        background: linear-gradient(45deg, $mainGreyTransparent, $darkGreyTransparent);
         margin-top: 0;
 
         &__main {
@@ -44,7 +37,9 @@
         }
             
         &__title {
-            font-size: 1em;
+            font-size: 1.2em;
+            color: #fff;
+            text-shadow: 0px 0px 1px $mainRed;
         }
     }
 }

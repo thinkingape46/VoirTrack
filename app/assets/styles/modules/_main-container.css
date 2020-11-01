@@ -7,16 +7,11 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-@media (max-width: 1000px) {
+@media (max-width: 425px) {
     .main-container {
         flex-direction: column;
-        margin-top: 0;
-    }
-}
-@media (max-width: 600px) {
-    .main-container {
         overflow: auto;
+        margin-top: 0;
         justify-content: start;
     }
 }
