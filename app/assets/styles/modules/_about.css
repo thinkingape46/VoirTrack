@@ -20,12 +20,15 @@
 
     &__container {
         position: relative;
-        width: 55%;
+        width: 100%;
         margin: auto;
-        transform: translateY(25%);
         z-index: 1000;
-        height: 500px;
-        background: linear-gradient(45deg, $mainGrey, $darkGrey);
+        height: 100%;
+        background: linear-gradient(45deg, #5c5c5c, #363636);
+
+        &__ul {
+            padding: 80px;
+        }
 
         &__content {
             position: absolute;
@@ -33,6 +36,7 @@
             left: 0;
             bottom: 0;
             right: 0;
+            overflow: scroll;
 
             &__title {
                 position: relative;
@@ -45,8 +49,10 @@
                 margin: 10px 30px auto 30px;
                 font-weight: 200;
         
-                &--item li {
-                    padding-bottom: 9px;
+                &__item {
+                    font-size: 1.1rem;
+                    padding-bottom: 17px;
+                    list-style: none;
                 }
             }
         }
@@ -56,7 +62,7 @@
 .close-button-image {    
         position: absolute;
         height: 35px;
-        right: 5px;
+        right: 23px;
         top: 5px;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
@@ -69,17 +75,34 @@
 
 @media (max-width: 425px) {
     .about__container {
-        width: 80%;
-        transform: translateY(16%);
+        width: 100%;
+        height: 100%;
+
+        &__ul {
+            padding: 25px;
+        }
 
         &__content {
+
             &__text {
-                margin: 10px 15px auto 15px;                
+                margin: 8px;                
             }
 
             &__title {
                 font-size: 1.3rem;
             }
+
+            &__text {
+                &__item {
+                    padding-bottom: 9px;
+                    font-weight: 100;
+                    font-size: 0.8rem;
+                    overflow: scroll;
+                }
+            }
         }
     }
+    .close-button-image {
+        right: 5px;
+}
 }
