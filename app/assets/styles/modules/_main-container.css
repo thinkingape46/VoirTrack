@@ -1,7 +1,8 @@
 .main-container {
     display: flex;
     justify-content: space-between;
-    max-width: 98%;
+    max-width: 99%;
+    height: 80vh;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -10,10 +11,12 @@
 @media (max-width: 1000px) {
     .main-container {
         flex-direction: column;
+        margin-top: 0;
     }
 }
 @media (max-width: 600px) {
     .main-container {
-        margin-top: 6px;
+        overflow: auto;
+        justify-content: start;
     }
 }

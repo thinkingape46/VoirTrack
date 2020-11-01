@@ -45,7 +45,22 @@
 }
 
 @media (max-width: 600px) {
+    .select-container {
+        margin: 0 auto;
+    }
     .select-files {
-        height: 75px;
+        height: 45px;
+        width: 50%;
+
+        &__text-content {
+            font-size: 1rem;
+        }
+    }
+    .submit-files {
+        height: 75%;
+
+        &__text-content {
+            font-size: 0.9rem;
+        }
     }
 }
