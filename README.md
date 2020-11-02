@@ -1,4 +1,4 @@
-# VoirTrack
+# GPX Chemin
 
 GPX Chemin is a simple web-app to visualize GPX files on a map.
 Files can be added by dropping files over Drop files here area or by clicking on Add files to select from file manager.
