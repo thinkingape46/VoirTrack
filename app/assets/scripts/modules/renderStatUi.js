@@ -40,15 +40,15 @@ class RenderStatsUi {
 
         if (track.avgHr != 'NA' && track.maxHr != 'NA') {
             let color = 'rgba(255, 0, 64, 1)'
-            renderGraph.plotHrGraph(track.hrDataArray, track.maxHr, color);
+            renderGraph.plotHrGraph(track.hrDataArray, track.maxHr, color, track.avgHr);
         }
         if (track.elevationStart != 'NA' && track.elevationMax != 'NA') {
-            let color = 'rgba(0, 230, 187, 1)'
-            renderGraph.plotelevationGraph(track.elevationArray, track.elevationMax, color, 2);
+            let color = 'rgba(0, 122, 100, 1)'
+            renderGraph.plotelevationGraph(track.elevationArray, track.elevationMax, color, track.elevationStart);
         }
         if (track.avgSpeed != 'NA' && track.maxSpeed != 'NA') {
-            let color = 'rgba(0, 153, 255, 1)'
-            renderGraph.plotSpeedGraph(track.speedArray, track.maxSpeed, color);
+            let color = 'rgba(1, 82, 135, 1)'
+            renderGraph.plotSpeedGraph(track.speedArray, track.maxSpeed, color, track.avgSpeed);
         }
     }
 

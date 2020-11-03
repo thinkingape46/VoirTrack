@@ -546,17 +546,33 @@ body {
         height: 40%;
         width: 100%;
 }
-.graph {
-    display: block;
-    height: 30%;
-    width: 100%;
-    padding: 15px 10px 0 10px;
-    box-sizing: border-box;
-}
+.graph-container__graph {
+            position: relative;
+            height: 30%;
+            width: 100%;
+        }
+.graph-container__canvas {
+            display: block;
+            height: 100%;
+            width: 100%;
+            padding: 15px 10px 0 10px;
+            box-sizing: border-box;
+        }
+.graph-container__stats {
+            position: absolute;
+            margin: 0;
+            left: 2%;
+            bottom: 2%;
+            padding: 5px;
+            box-sizing: border-box;
+            font-weight: 500;
+            font-size: 0.65rem;
+        }
 @media (max-width: 425px) {
-    .graph {
-        padding: 5px 10px 0 10px;
-    }
+
+        .graph-container__canvas {
+            padding: 5px 10px 0 10px;
+        }
 }
 .footer {
     display: flex;

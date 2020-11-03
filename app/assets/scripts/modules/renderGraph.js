@@ -10,6 +10,10 @@ class RenderGraph {
         
         this.speedGraph = document.getElementById('speedGraph');
         this.speedGraphCtx = this.speedGraph.getContext('2d');
+
+        this.hrContainer = document.getElementById("graph-container__hr");
+        this.elevationContainer = document.getElementById("graph-container__elevation");
+        this.speedContainer = document.getElementById("graph-container__speed");
         
         // this.graph()
         this.width = this.hrGraph.width;
@@ -25,9 +29,7 @@ class RenderGraph {
     
     }
 
-    plotSpeedGraph(array, arrayMax, color) {
-
-
+    plotSpeedGraph(array, arrayMax, color, arrayAvg) {
 
         let length = array.length;
         let xUnit = this.width / length;
@@ -44,9 +46,15 @@ class RenderGraph {
         }
         this.speedGraphCtx.lineTo(this.width, this.height);
         this.speedGraphCtx.fill();
+
+/* Plot statistics on the graph */
+        this.speedContainer.insertAdjacentHTML('beforeend', 
+        `
+            <p class="graph-container__stats">Avg Speed: ${arrayAvg.toFixed(2)} km/hr,&nbsp;&nbsp;Max Speed: ${arrayMax.toFixed(2)} km/hr</p>
+        `)
     }
 
-    plotelevationGraph(array, arrayMax, color) {
+    plotelevationGraph(array, arrayMax, color, arrayAvg) {
 
         let length = array.length;
         let xUnit = this.width / length;
@@ -63,9 +71,16 @@ class RenderGraph {
         }
         this.elevationGraphCtx.lineTo(this.width, this.height);
         this.elevationGraphCtx.fill();
+
+/* Plot statistics on the graph */
+        this.elevationContainer.insertAdjacentHTML('beforeend', 
+        `
+            <p class="graph-container__stats">Start Elevation: ${arrayAvg},&nbsp;&nbsp;Max Elevation: ${arrayMax}</p>
+        `)
+
     }
 
-    plotHrGraph(array, arrayMax, color) {
+    plotHrGraph(array, arrayMax, color, arrayAvg) {
 
         let length = array.length;
         let xUnit = this.width / length;
@@ -82,6 +97,12 @@ class RenderGraph {
         }
         this.hrGraphCtx.lineTo(this.width, this.height);
         this.hrGraphCtx.fill();
+
+/* Plot statistics on the graph */
+        this.hrContainer.insertAdjacentHTML('beforeend', 
+        `
+            <p class="graph-container__stats">Avg HR: ${arrayAvg} bpm,&nbsp;&nbsp;Max HR: ${arrayAvg} bpm</p>
+        `)
     }
 }
 

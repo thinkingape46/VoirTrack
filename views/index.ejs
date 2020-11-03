@@ -52,10 +52,17 @@
         </div>    
         <div class="map-container">
             <div id="mapid" class="map-id"></div>
+            
             <div class="graph-container">
-                <canvas class="graph" id="hrGraph">This area is rendered using Canvas</canvas>
-                <canvas class="graph" id="elevationGraph">This area is rendered using Canvas</canvas>
-                <canvas class="graph" id="speedGraph">This area is rendered using Canvas</canvas>
+                <div class="graph-container__graph" id="graph-container__hr">
+                    <canvas class="graph-container__canvas" id="hrGraph">This area is rendered using Canvas</canvas>
+                </div>
+                <div class="graph-container__graph" id="graph-container__elevation">
+                    <canvas class="graph-container__canvas" id="elevationGraph">This area is rendered using Canvas</canvas>
+                </div>
+                <div class="graph-container__graph" id="graph-container__speed">
+                    <canvas class="graph-container__canvas" id="speedGraph">This area is rendered using Canvas</canvas>
+                </div>
             </div>
         </div>
         <div class="stats-container">
