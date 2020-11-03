@@ -16,6 +16,9 @@ class RenderGraph {
         this.hrContainer = document.getElementById("graph-container__hr");
         this.elevationContainer = document.getElementById("graph-container__elevation");
         this.speedContainer = document.getElementById("graph-container__speed");
+
+        this.graph = document.querySelectorAll(".graph-container__graph");
+        
         
         // this.graph()
         this.width = this.hrGraph.width;
@@ -25,10 +28,23 @@ class RenderGraph {
     clearCanvas() {
 /* Clearing the canvas before repainting */
         
-    this.speedGraphCtx.clearRect(0, 0, this.width, this.height);
-    this.elevationGraphCtx.clearRect(0, 0, this.width, this.height);
-    this.hrGraphCtx.clearRect(0, 0, this.width, this.height);
-    
+        this.speedGraphCtx.clearRect(0, 0, this.width, this.height);
+        this.elevationGraphCtx.clearRect(0, 0, this.width, this.height);
+        this.hrGraphCtx.clearRect(0, 0, this.width, this.height);
+        
+        this.graph.forEach((el) => {
+
+/* Remove the stat paragraph only when it exists.*/
+            if (el.children[1] != undefined) {
+                el.children[1].remove();
+            }
+            })
+
+/* Remove the title only when it exists.*/           
+        if (this.graphContainer.childElementCount === 4) {
+            this.graphContainer.children[3].remove();
+        }
+
     }
 
     graphTitle(title, date, distance) {
