@@ -10,7 +10,7 @@ class RenderStatsUi {
 
     renderUi(track) {
         
-        let formattedDate = this.getDate(track.date);
+        this.formattedDate = this.getDate(track.date);
         let speedStats = this.sanitizeSpeed(track);
         let elevationStats = this.sanitizeElevation(track);
         let heartData = this.sanitizeHeartRate(track);
@@ -20,7 +20,7 @@ class RenderStatsUi {
             <div class="activity ${track.date}" style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), ${track.color});">
                 <div class="activity__head">
                     <p class="activity__head__stat title">${track.title}</p>
-                    <p class="activity__head__stat date">${formattedDate}</p>
+                    <p class="activity__head__stat date">${this.formattedDate}</p>
                 </div>
                 <div class="activity__row">
                     <p class="activity__stat distance">Distance: ${track.distance.toFixed(2)} km</p>
@@ -49,6 +49,10 @@ class RenderStatsUi {
         if (track.avgSpeed != 'NA' && track.maxSpeed != 'NA') {
             let color = 'rgba(1, 82, 135, 1)'
             renderGraph.plotSpeedGraph(track.speedArray, track.maxSpeed, color, track.avgSpeed);
+        }
+
+        if (track.avgHr != 'NA' || track.elevationStart != 'NA' || track.avgSpeed != 'NA') {
+            renderGraph.graphTitle(track.title, this.formattedDate, track.distance.toFixed(2))
         }
     }
 

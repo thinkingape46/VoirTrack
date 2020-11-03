@@ -11,6 +11,8 @@ class RenderGraph {
         this.speedGraph = document.getElementById('speedGraph');
         this.speedGraphCtx = this.speedGraph.getContext('2d');
 
+        this.graphContainer = document.querySelectorAll(".graph-container")[0];
+
         this.hrContainer = document.getElementById("graph-container__hr");
         this.elevationContainer = document.getElementById("graph-container__elevation");
         this.speedContainer = document.getElementById("graph-container__speed");
@@ -27,6 +29,13 @@ class RenderGraph {
     this.elevationGraphCtx.clearRect(0, 0, this.width, this.height);
     this.hrGraphCtx.clearRect(0, 0, this.width, this.height);
     
+    }
+
+    graphTitle(title, date, distance) {
+        this.graphContainer.insertAdjacentHTML('beforeend', 
+            `
+                <p class="graph-container__title">${title},  ${date},  ${distance} km</p>
+            `)
     }
 
     plotSpeedGraph(array, arrayMax, color, arrayAvg) {
@@ -50,7 +59,7 @@ class RenderGraph {
 /* Plot statistics on the graph */
         this.speedContainer.insertAdjacentHTML('beforeend', 
         `
-            <p class="graph-container__stats">Avg Speed: ${arrayAvg.toFixed(2)} km/hr,&nbsp;&nbsp;Max Speed: ${arrayMax.toFixed(2)} km/hr</p>
+            <p class="graph-container__stats">Avg Speed: ${arrayAvg.toFixed(2)} km/hr,  Max Speed: ${arrayMax.toFixed(2)} km/hr</p>
         `)
     }
 
@@ -75,7 +84,7 @@ class RenderGraph {
 /* Plot statistics on the graph */
         this.elevationContainer.insertAdjacentHTML('beforeend', 
         `
-            <p class="graph-container__stats">Start Elevation: ${arrayAvg},&nbsp;&nbsp;Max Elevation: ${arrayMax}</p>
+            <p class="graph-container__stats">Start Elevation: ${arrayAvg},  Max Elevation: ${arrayMax}</p>
         `)
 
     }
@@ -101,7 +110,7 @@ class RenderGraph {
 /* Plot statistics on the graph */
         this.hrContainer.insertAdjacentHTML('beforeend', 
         `
-            <p class="graph-container__stats">Avg HR: ${arrayAvg} bpm,&nbsp;&nbsp;Max HR: ${arrayAvg} bpm</p>
+            <p class="graph-container__stats">Avg HR: ${arrayAvg} bpm,  Max HR: ${arrayAvg} bpm</p>
         `)
     }
 }
