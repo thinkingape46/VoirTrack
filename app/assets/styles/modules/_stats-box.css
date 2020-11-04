@@ -2,6 +2,7 @@
     overflow: hidden scroll;
     margin: 8px;
     box-sizing: border-box;
+    cursor: pointer;
     
     &::-webkit-scrollbar {
         width: 5px;
@@ -31,6 +32,7 @@
         margin: 5px 0 10px 0;
         font-size: 0.8em;
         font-weight: 300;
+        pointer-events: none;
 
         &__stat {
             margin: 3px 0;
@@ -41,6 +43,7 @@
         display: flex;
         justify-content: space-between;
         margin: 5px 0;
+        pointer-events: none;
     }
 
     &__stat {

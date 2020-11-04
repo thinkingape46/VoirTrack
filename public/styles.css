@@ -497,6 +497,7 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden scroll;
     margin: 8px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 #activities::-webkit-scrollbar {
         width: 5px;
@@ -523,6 +524,7 @@ body::-webkit-scrollbar-thumb {
         margin: 5px 0 10px 0;
         font-size: 0.8em;
         font-weight: 300;
+        pointer-events: none;
     }
 .activity__head__stat {
             margin: 3px 0;
@@ -531,6 +533,7 @@ body::-webkit-scrollbar-thumb {
         display: flex;
         justify-content: space-between;
         margin: 5px 0;
+        pointer-events: none;
     }
 .activity__stat {
         margin: 0;

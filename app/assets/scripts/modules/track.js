@@ -1,5 +1,5 @@
 class Track {
-    constructor(id, title, date, distance, duration, avgSpeed, maxSpeed, elevationStart, elevationMax, avgHr, maxHr, color, speedArray, hrDataArray, elevationArray, zoomLevel) {
+    constructor(id, title, date, distance, duration, avgSpeed, maxSpeed, elevationStart, elevationMax, avgHr, maxHr, color, speedArray, hrDataArray, elevationArray, zoomLevel, centerCoordinate) {
         this.id = id;
         this.title = title;
         this.date = date;
@@ -16,6 +16,7 @@ class Track {
         this.hrDataArray = hrDataArray;
         this.elevationArray = elevationArray;
         this.zoomLevel = zoomLevel;
+        this.centerCoordinate = centerCoordinate;
     }
 }
 

@@ -1,5 +1,6 @@
 import RenderGraph from './renderGraph';
 let renderGraph = new RenderGraph();
+import FocusActivity from './focusActivity';
 
 class RenderStatsUi {
     
@@ -34,6 +35,8 @@ class RenderStatsUi {
         this.activities.insertAdjacentHTML('beforeend', activity);
 
         this.statsContainer.classList.add("stats-container--is-visible");
+
+        new FocusActivity();
 
 /*  Clearing the canvas before repaintnig */
         renderGraph.clearCanvas();

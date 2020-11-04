@@ -16,6 +16,7 @@ class RenderGpx {
     constructor() {
         this.longs = [];
         this.zoomLevelsList = [];
+        this.trackStorage = window.sessionStorage;
     }
 
     renderGpx(xhrResponse) {
@@ -40,7 +41,7 @@ class RenderGpx {
         }
              
 
-        // Gets the activity type if available, this works well for strava.
+/* Gets the activity type if available, this works well for strava.*/
         let activityType = this.activityTypeCalc(this.gpxParsedDocument);
         
         let elevationData, elevationStart, elevationMax;
@@ -116,8 +117,14 @@ class RenderGpx {
         let trackId = `${title}-${time}-${elevationData.length}-${distanceData[0]}`;
         
 /* Instantiating a Track class */
-        let track = new Track(trackId, title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr, color, speedData.speedArray, hrDataOutput.hrDataArray, elevationData, this.zoomLevel);
-        
+        let track = new Track(trackId, title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr, color, speedData.speedArray, hrDataOutput.hrDataArray, elevationData, this.zoomLevel, this.centerCoordinate);
+
+/* Clearing the arrays as all the calculations are done for the track */
+        this.longs = [];
+        lats = [];
+        longs = [];
+/* Using sessionStorge */        
+        sessionStorage.setItem(trackId, JSON.stringify(track));
 /* Load the track only when it's not already loaded */
         if (document.getElementById(trackId) == null) {
             renderStatUi.renderUi(track);
