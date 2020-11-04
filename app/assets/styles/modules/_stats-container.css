@@ -19,14 +19,15 @@
         flex-grow: 1;
         flex-basis: 37%;
         display: none;
+        margin-top: 8px;
 
         &--is-visible {
             display: flex;
         }
 
         &__heading {
-            padding: 5px 0;
-            font-size: 0.8em;
+            padding: 3px 0;
+            font-size: 0.65em;
         }
     }
 }

@@ -17,7 +17,7 @@ class RenderStatsUi {
         let i;
         
         let activity = `
-            <div class="activity ${track.date}" style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), ${track.color});">
+            <div class="activity" id="${track.title}-${track.date}-${track.elevationArray.length}-${track.distance}" style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), ${track.color});">
                 <div class="activity__head">
                     <p class="activity__head__stat title">${track.title}</p>
                     <p class="activity__head__stat date">${this.formattedDate}</p>

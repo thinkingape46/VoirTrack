@@ -23,7 +23,7 @@ class AboutModal {
                 </div>
 
                 <div class="about__container__content">
-                    <h1 class="text-content about__container__content__title">What is this GPX Chemin for?</h1>
+                    <h1 class="text-content about__container__content__title">About</h1>
                     <main class="about__container__main">
                         <ul class="text-content about__container__ul">
                             <li class="about__container__content__text__item">GPX Chemin is a simple web-app to visualize GPX files on a map.</li>

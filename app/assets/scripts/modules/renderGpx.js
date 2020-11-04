@@ -112,13 +112,18 @@ class RenderGpx {
         this.zoomLevelsList.push(this.zoomLevel);
         let zoomMin = Math.min.apply(null, this.zoomLevelsList);
         let color = randomColor.randomColorGenerator();
-        simpleMap.setView(this.centerCoordinate, zoomMin);
-        L.polyline(latLongs, {color: color}).addTo(simpleMap);
+
+        let trackId = `${title}-${time}-${elevationData.length}-${distanceData[0]}`;
         
 /* Instantiating a Track class */
-        let track = new Track(title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr, color, speedData.speedArray, hrDataOutput.hrDataArray, elevationData);
+        let track = new Track(trackId, title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr, color, speedData.speedArray, hrDataOutput.hrDataArray, elevationData, this.zoomLevel);
         
-        renderStatUi.renderUi(track);
+/* Load the track only when it's not already loaded */
+        if (document.getElementById(trackId) == null) {
+            renderStatUi.renderUi(track);
+            simpleMap.setView(this.centerCoordinate, zoomMin);
+            L.polyline(latLongs, {color: color, className: trackId}).addTo(simpleMap);
+        }        
     }
 
     centerCoordinateCalc() {

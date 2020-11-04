@@ -31,7 +31,7 @@
 }
 @media (max-width: 425px) {
     .input-container {
-        margin: 6px;
+        margin: 3px;
         flex-basis: auto;
         background-color: rgba(0,0,0,0);
     }

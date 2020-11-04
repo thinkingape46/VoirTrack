@@ -36,7 +36,6 @@
             left: 0;
             bottom: 0;
             right: 0;
-            overflow: scroll;
 
             &__title {
                 position: relative;
@@ -60,13 +59,13 @@
 }
 
 .close-button-image {    
-        position: absolute;
-        height: 35px;
-        right: 23px;
-        top: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        z-index: 1100;
+    position: absolute;
+    height: 60px;
+    right: 1%;
+    top: 1%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 1100;
 
         &:hover {
             transform: rotate(180deg);
@@ -83,6 +82,7 @@
         }
 
         &__content {
+            overflow: scroll;
 
             &__text {
                 margin: 8px;                
@@ -103,6 +103,6 @@
         }
     }
     .close-button-image {
-        right: 5px;
+        height: 35px;
 }
 }
