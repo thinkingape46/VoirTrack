@@ -18,7 +18,7 @@ class RenderStatsUi {
         let i;
         
         let activity = `
-            <div class="activity" id="${track.title}-${track.date}-${track.elevationArray.length}-${track.distance}" style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), ${track.color});">
+            <div class="activity" id="${track.id}" style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), ${track.color});">
                 <div class="activity__head">
                     <p class="activity__head__stat title">${track.title}</p>
                     <p class="activity__head__stat date">${this.formattedDate}</p>
@@ -36,7 +36,7 @@ class RenderStatsUi {
 
         this.statsContainer.classList.add("stats-container--is-visible");
 
-        new FocusActivity();
+        
 
         this.graphsUi(track);
 
@@ -60,7 +60,7 @@ class RenderStatsUi {
             renderGraph.plotSpeedGraph(track.speedArray, track.maxSpeed, color, track.avgSpeed);
         }
         if (track.avgHr != 'NA' || track.elevationStart != 'NA' || track.avgSpeed != 'NA') {
-            renderGraph.graphTitle(track.title, this.formattedDate, track.distance.toFixed(2))
+            renderGraph.graphTitle(track.title, track.distance.toFixed(2))
         }
     }
 

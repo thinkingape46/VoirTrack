@@ -23,7 +23,6 @@
     padding: 6px;
     box-sizing: border-box;
     background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(10,10,10,0.5));
-    box-shadow: 0 0 2px #fff;
 
     &__head {
         display: flex;

@@ -47,10 +47,10 @@ class RenderGraph {
 
     }
 
-    graphTitle(title, date, distance) {
+    graphTitle(title, distance) {
         this.graphContainer.insertAdjacentHTML('beforeend', 
             `
-                <p class="graph-container__title">${title},  ${date},  ${distance} km</p>
+                <p class="graph-container__title">${title},  ${distance} km</p>
             `)
     }
 

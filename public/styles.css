@@ -392,6 +392,7 @@ body::-webkit-scrollbar-thumb {
     .map-container {
         margin-bottom: 0;
         height: 300px;
+        flex-basis: auto;
     }
 }
 .connect-strava {
@@ -515,7 +516,6 @@ body::-webkit-scrollbar-thumb {
     padding: 6px;
     box-sizing: border-box;
     background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(10,10,10,0.5));
-    box-shadow: 0 0 2px #fff;
 }
 .activity__head {
         display: flex;
@@ -641,3 +641,11 @@ body::-webkit-scrollbar-thumb {
             font-size: .8rem;
         }
 }
+.leaflet-interactive {
+    stroke-width: 3px;
+    position: relative;
+}
+.leaflet-interactive:hover {
+       stroke-width: 5px;
+       outline: #5c5c5c;
+    }

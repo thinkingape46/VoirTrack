@@ -1,0 +1,9 @@
+.leaflet-interactive {
+    stroke-width: 3px;
+    position: relative;
+
+    &:hover {
+       stroke-width: 5px;
+       outline: $mainGrey;
+    }
+}

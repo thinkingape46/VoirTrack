@@ -5,6 +5,7 @@ import GpxSpeed from './gpxSpeed';
 import HeartRate from './heartRate';
 import Track from './track';
 import RenderStatsUi from './renderStatUi';
+import FocusActivity from './focusActivity';
 
 let gpxDistance = new GpxDistance();
 let randomColor = new RandomColor();
@@ -114,7 +115,7 @@ class RenderGpx {
         let zoomMin = Math.min.apply(null, this.zoomLevelsList);
         let color = randomColor.randomColorGenerator();
 
-        let trackId = `${title}-${time}-${elevationData.length}-${distanceData[0]}`;
+        let trackId = `${time}-${elevationData.length}-${distanceData[0]}`;
         
 /* Instantiating a Track class */
         let track = new Track(trackId, title, time, distanceData[0], speedData.duration, speedData.avgSpeed, speedData.maxSpeed, elevationStart, elevationMax, hrDataOutput.avgHr, hrDataOutput.maxHr, color, speedData.speedArray, hrDataOutput.hrDataArray, elevationData, this.zoomLevel, this.centerCoordinate);
@@ -129,8 +130,9 @@ class RenderGpx {
         if (document.getElementById(trackId) == null) {
             renderStatUi.renderUi(track);
             simpleMap.setView(this.centerCoordinate, zoomMin);
-            L.polyline(latLongs, {color: color, className: trackId}).addTo(simpleMap);
-        }        
+            L.polyline(latLongs, {color: color, className: trackId, id: trackId}).addTo(simpleMap);
+        }
+        new FocusActivity();
     }
 
     centerCoordinateCalc() {
