@@ -333,7 +333,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: space-between;
     max-width: 99%;
-    height: 80vh;
+    height: 75.5vh;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -386,12 +386,12 @@ body::-webkit-scrollbar-thumb {
 .map-id {
     background-color: lightblue;
     box-shadow: 0 0 13px #000;
-    height: 60%;
+    height: 65%;
 }
 @media (max-width: 425px) {
     .map-container {
         margin-bottom: 0;
-        height: 330px;
+        height: 300px;
     }
 }
 .connect-strava {
@@ -545,13 +545,17 @@ body::-webkit-scrollbar-thumb {
         margin: 0;
     }
     .activity {
-        margin: 0 auto;
+        margin: 2px auto;
     }
 
         .activity__head {
             margin: 0;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
+
+            .activity__head__stat {
+                margin: 1px 0;
+            }
 
         .activity__row {
             margin: 1px 0;
@@ -564,7 +568,7 @@ body::-webkit-scrollbar-thumb {
 .graph-container {
         position: relative;
         display: block;
-        height: 40%;
+        height: 35%;
         width: 100%;
 }
 .graph-container__graph {
@@ -615,10 +619,6 @@ body::-webkit-scrollbar-thumb {
 }
 .footer {
     display: flex;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     height: 80px;
 }
 .footer__text {

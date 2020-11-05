@@ -1,9 +1,11 @@
 import simpleMap from './simpleMap';
+import RenderStatsUi from './renderStatUi';
 
 class FocusActivity {
 
     constructor() {
         this.activityArray = document.querySelectorAll(".activity");
+        this.renderStatsUi = new RenderStatsUi();
         this.events();
     }
 
@@ -17,9 +19,9 @@ class FocusActivity {
 /* Getting the ID of the activity */
         let id = e.target.id;
         let track = sessionStorage.getItem(id);
-        let trackJsonified = JSON.parse(track);
-        
+        let trackJsonified = JSON.parse(track);        
         simpleMap.setView(trackJsonified.centerCoordinate, trackJsonified.zoomLevel);
+        this.renderStatsUi.graphsUi(trackJsonified);
     }
 
 }

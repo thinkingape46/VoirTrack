@@ -58,11 +58,15 @@
         margin: 0;
     }
     .activity {
-        margin: 0 auto;
+        margin: 2px auto;
 
         &__head {
             margin: 0;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
+
+            &__stat {
+                margin: 1px 0;
+            }
         }
 
         &__row {
