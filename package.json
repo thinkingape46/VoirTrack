@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "watch": "nodemon server",
+    "watch": "nodemon server --ignore app --ignore public/ & webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
